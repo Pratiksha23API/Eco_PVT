@@ -472,9 +472,9 @@ public class Dashboard extends BaseClass {
 		applyExplicitWaitsUntilElementClickable(setting,30).click();                               //setting
 		applyExplicitWaitsUntilElementClickable(unifiedDatePicker,30).click();                     //unified picker
 		applyExplicitWaitsUntilElementClickable(updateBtn,30).click();                              //update
-     }
-	
-	
+	}
+
+
 	public String deleteTheDashboard() throws Exception
 	{
 		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
