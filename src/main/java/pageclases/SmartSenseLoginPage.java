@@ -8,20 +8,23 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.eco.base.JavaScriptOperation;
+
 
 
 public class SmartSenseLoginPage {
 
 	WebDriver ndriver;
 	WebDriverWait wait;
+	JavaScriptOperation js;
 
-	@FindBy(xpath= "//*[@name='username']")
+	@FindBy(xpath= "//input[@id='username']")
 	private WebElement Username;
 
-	@FindBy(xpath= "//*[@name='password']")
+	@FindBy(xpath= "//input[@id='password']")
 	private WebElement Password;
 
-	@FindBy(xpath= "//*[@class='login-btn']")
+	@FindBy(xpath= "//button[@type='submit']")
 	private WebElement Loginbutton;
 
 
@@ -30,6 +33,7 @@ public class SmartSenseLoginPage {
 		this.ndriver=odriver;
 		PageFactory.initElements(ndriver, this);
 		wait=new WebDriverWait(ndriver, Duration.ofSeconds(30));
+		js=new JavaScriptOperation(ndriver);
 	}
 
 	public void Enterusername(String username) 
@@ -44,7 +48,8 @@ public class SmartSenseLoginPage {
 
 	public void clickonLoginButton() 
 	{
-		Loginbutton.click();
+//		Loginbutton.click();
+		js.click(Loginbutton);
 
 	}
 	public String GetTitileOfPage() 

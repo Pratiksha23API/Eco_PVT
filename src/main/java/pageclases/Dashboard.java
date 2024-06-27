@@ -1,6 +1,7 @@
 package pageclases;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -187,10 +188,11 @@ public class Dashboard extends BaseClass {
 	@FindBy(xpath="//button[normalize-space()='Update']")
 	private WebElement  updateBtn ;
 
-
-	@FindBy(xpath="//div[@class='Toastify__toast Toastify__toast--success successToast notification']")
+	@FindBy(xpath="//span[@class='mainMsg']")
 	private WebElement  notification ;
 
+	@FindBy(xpath="//button[normalize-space()='Delete Dashboard']")
+	private WebElement  deleteMenu ;
 
 
 
@@ -439,7 +441,7 @@ public class Dashboard extends BaseClass {
 		Thread.sleep(2000);
 	}
 
-	public void checkIfFileIsDownloaded(String dataFileNameWithExtension) throws Exception {
+	public boolean checkIfFileIsDownloaded(String dataFileNameWithExtension) throws Exception {
 		String basePath = System.getProperty("user.dir");
 		String path =basePath+"\\downloadfiles";	
 		// C:\Users\Admin\git\Eco\Eco_PVT\download
@@ -452,7 +454,8 @@ public class Dashboard extends BaseClass {
 		else {
 			System.out.println(dataFileNameWithExtension+" File downloaded");
 		}
-
+		return a;
+		/////////////////
 	}
 	public static boolean isFileDownloaded(String downloadDir, String fileName) {
 		File file = new File(downloadDir + File.separator + fileName);
@@ -469,8 +472,20 @@ public class Dashboard extends BaseClass {
 		applyExplicitWaitsUntilElementClickable(setting,30).click();                               //setting
 		applyExplicitWaitsUntilElementClickable(unifiedDatePicker,30).click();                     //unified picker
 		applyExplicitWaitsUntilElementClickable(updateBtn,30).click();                              //update
-
-
+     }
+	
+	
+	public String deleteTheDashboard() throws Exception
+	{
+		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementClickable(deleteMenu,30).click(); 
+		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementClickable(okBtn, 30).click();
+		Thread.sleep(1000);
+		String deleteNotifn =notification.getText();
+		return deleteNotifn;
 	}
 
 

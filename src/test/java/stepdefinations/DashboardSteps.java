@@ -58,7 +58,8 @@ public class DashboardSteps {
 
 	@Then("Verify downloaded file of data is avaliable in project folder with {string} name")
 	public void verify_downloaded_file_of_data_is_avaliable_in_project_folder_with_name(String filenameWithExtension) throws Exception {
-		dash.checkIfFileIsDownloaded(filenameWithExtension);
+	boolean	a=dash.checkIfFileIsDownloaded(filenameWithExtension);
+	Assert.assertTrue(a, filenameWithExtension+" is downloaded");
 	}
 
 
@@ -69,6 +70,13 @@ public class DashboardSteps {
 	@Then("Finally user Setting up the dashboard with unified date picker and update it")
 	public void finally_user_setting_up_the_dashboard_with_unified_date_picker_and_update_it() throws Exception {
 		dash.settingOfDashboard();
+	}
+	
+	@Then("Delete the dashboard and user will get messg as {string}")
+	public void delete_the_dashboard_and_user_will_get_messg_as(String deleteMessg) throws Exception {
+        String deleteNotfn = dash.deleteTheDashboard();
+        boolean isPresent = deleteNotfn.contains(deleteMessg);
+		Assert.assertTrue(isPresent);
 	}
 
 }

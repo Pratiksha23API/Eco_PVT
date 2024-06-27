@@ -24,4 +24,5 @@ Feature: create dashboard Module
  When User Download the widget data as pdf 
  Then Verify downloaded file of data is avaliable in project folder with "smartsense.pdf" name
  And Finally user Setting up the dashboard with unified date picker and update it
+ Then Delete the dashboard and user will get messg as "Dashboard Deleted"
   
