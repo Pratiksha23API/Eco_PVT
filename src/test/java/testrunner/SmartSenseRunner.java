@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-		features = {"src\\test\\resources\\features\\AddDashboard.feature"},
+		features = {"src\\test\\resources\\features\\AddWidgetWithGraphType.feature"},
 		glue= {"stepdefinations"},
 		dryRun= false,
 		monochrome=true,
@@ -14,14 +14,6 @@ import io.cucumber.testng.CucumberOptions;
 
 		plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		)
-
-
-
-
-
-
-
-
 
 public class SmartSenseRunner extends AbstractTestNGCucumberTests
 {

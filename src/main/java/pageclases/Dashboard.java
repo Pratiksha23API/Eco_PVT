@@ -249,6 +249,8 @@ public class Dashboard extends BaseClass {
 			applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
 
 			applyExplicitWaitsUntilElementClickable(fromField,30).sendKeys("10");
+			
+			
 
 			jse = (JavascriptExecutor) ndriver;
 			jse.executeScript("window.scrollBy(0,1000)");
