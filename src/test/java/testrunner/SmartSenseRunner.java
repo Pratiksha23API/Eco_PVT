@@ -5,7 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-		features = {"src\\test\\resources\\features\\AddWidgetWithGraphType.feature"},
+//		features = {"src\\test\\resources\\features\\AddWidgetWithGraphType.feature"},
+features= {"C:\\Users\\LENOVO\\git\\repository2\\Eco_PVT_LTD\\src\\test\\resources\\features\\AddWidgetsWithGraphType.feature"},
 		glue= {"stepdefinations"},
 		dryRun= false,
 		monochrome=true,

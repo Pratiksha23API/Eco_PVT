@@ -267,10 +267,10 @@ public class WidgetWithGraphType extends BaseClass {
 			applyExplicitWaitsUntilElementClickable(selectTag, 40).click();
 			applyExplicitWaitsUntilElementClickable(qaAlertLog, 30).click();
 			acn= new Actions(ndriver);
-			acn.moveToElement(refreshPreview).click().perform();
-			Thread.sleep(2000);
-			applyExplicitWaitsUntilElementClickable(addWidgetBtn, 30).click();
-			Thread.sleep(1000);
+//			acn.moveToElement(refreshPreview).click().perform();
+//			Thread.sleep(2000);
+//			applyExplicitWaitsUntilElementClickable(addWidgetBtn, 30).click();
+//			Thread.sleep(1000);
 		}
 
 	}
