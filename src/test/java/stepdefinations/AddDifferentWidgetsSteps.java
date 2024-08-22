@@ -24,11 +24,27 @@ public class AddDifferentWidgetsSteps {
 	@When("User Add widget as {string} then Verify after refresh preview widget is should be dispayed compulsory")
 	public void user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(String widgetName) throws Exception {
 
-	   widgets.addMapView(widgetName);
+//	   widgets.addTable(widgetName);
 	}
 
 	@When("Clone it that dispayed the widget it gets clone successfully after that delete that clone widget")
 	public void clone_it_that_dispayed_the_widget_it_gets_clone_successfully_after_that_delete_that_clone_widget() {
 	}
+	
+	
+	@When("User Add widget as {string} add below parameters")
+	public void user_add_widget_as_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
+		
+	  widgets.addTable(widgetTable);
+	  widgets.selectParametersforTableWidget(dataTable);
+	}
+
+	@When("below sensors then Verify after refresh preview widget is should be dispayed compulsory")
+	public void below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
+		  widgets.selectSensorsforTableWidget(dataTable);
+	
+	}
+
+
 
 }
