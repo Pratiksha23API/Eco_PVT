@@ -367,9 +367,7 @@ public class Dashboard extends BaseClass {
 		return widgetDisplayed;
 
 	}
-
-
-
+	
 	public void cloneTheWidgetAndDeleteClone() throws Exception
 	{ 
 		jse= (JavascriptExecutor)ndriver;
