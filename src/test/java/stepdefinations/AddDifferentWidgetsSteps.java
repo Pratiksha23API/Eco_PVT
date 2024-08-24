@@ -24,7 +24,7 @@ public class AddDifferentWidgetsSteps {
 	@When("User Add widget as {string} then Verify after refresh preview widget is should be dispayed compulsory")
 	public void user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(String widgetName) throws Exception {
 
-		widgets.addAnomalyDetection(widgetName);
+//		widgets.addMapView(widgetName);
 
 	}
 
@@ -37,7 +37,7 @@ public class AddDifferentWidgetsSteps {
 	//copy and edit anomly
 	@When("Clone it that dispayed Anomly widget gets clone after delete that cloned gets delete and after edit user able to save changes")
 	public void clone_it_that_dispayed_anomly_widget_gets_clone_after_delete_that_cloned_gets_delete_and_after_edit_user_able_to_save_changes() throws Exception {
-		widgets.copyAndEditAnomly();
+//		widgets.copyAndEditAnomly();
 
 	}
 
@@ -47,14 +47,14 @@ public class AddDifferentWidgetsSteps {
 	@When("User Add widget as {string} add below parameters")
 	public void user_add_widget_as_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
 
-		//	  widgets.addTable(widgetTable);
-		//	  widgets.selectParametersforTableWidget(dataTable);
+			  widgets.addTable(widgetTable);
+			  widgets.selectParametersforTableWidget(dataTable);
 	}
 
 	@When("below sensors then Verify after refresh preview widget is should be dispayed compulsory")
 	public void below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
-		//		  widgets.selectSensorsforTableWidget(dataTable);
-		//		  widgets.clickOnRefreshAndAddWidget();
+				  widgets.selectSensorsforTableWidget(dataTable);
+				  widgets.clickOnRefreshAndAddWidget();
 
 	}
 

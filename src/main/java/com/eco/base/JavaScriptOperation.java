@@ -26,5 +26,10 @@ public class JavaScriptOperation {
 			javascriptExecutor = (JavascriptExecutor) driver;
 			javascriptExecutor.executeScript("arguments[0].value='"+value+"';", element);
 		}
+		
+		public static void scrollToElement( WebElement element) {
+	        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+	        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+	    }
 
 }

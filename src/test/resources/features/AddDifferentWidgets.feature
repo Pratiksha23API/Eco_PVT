@@ -17,12 +17,13 @@ Feature: create dashboard Module
  #When Clone it that dispayed the widget it gets clone successfully after that delete that clone widget
  #When User Add widget as "RunHours" then Verify after refresh preview widget is should be dispayed compulsory
  #When Clone it that dispayed the widget it gets clone successfully after that delete that clone widget
- When User Add widget as "Anomaly Detection" then Verify after refresh preview widget is should be dispayed compulsory
- When Clone it that dispayed Anomly widget gets clone after delete that cloned gets delete and after edit user able to save changes
+ #When User Add widget as "Anomaly Detection" then Verify after refresh preview widget is should be dispayed compulsory
+ #When Clone it that dispayed Anomly widget gets clone after delete that cloned gets delete and after edit user able to save changes
  When User Add widget as "Table" add below parameters
- |L1 L2 Voltage 1 | 
+ |L1 L2 Voltage 1 |
+ #|L1 L2 Voltage 1 | Condensing Water Supply Temperature B|
   And  below sensors then Verify after refresh preview widget is should be dispayed compulsory
-| QA12| sensor 9| 
+| QA12|sensor 9| 
 
 
  #Map View

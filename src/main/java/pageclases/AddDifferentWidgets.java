@@ -200,6 +200,9 @@ public class AddDifferentWidgets extends BaseClass {
 	////////////////////////////////////////////////////  copy	
 	@FindBy(xpath="//div[text()=' Anomaly Detection - Copy']")
 	private WebElement  copiedAnomly;
+	
+	@FindBy(xpath="//div[text()=' RunHours - Copy']")
+	private WebElement  copiedRunHour;
 
 	@FindBy(xpath="//div[text()=' Anomaly Detection - Copy']//following::div [@class='widgetArrow']")
 	private WebElement  copiedAnomlyVerticalIcon;
@@ -231,7 +234,7 @@ public class AddDifferentWidgets extends BaseClass {
 	@FindBy(xpath="//button[normalize-space()='Save Changes']")
 	private WebElement saveChangesBtn;
 
-
+    public static String widget ="";
 	public String createNewDashboard(String dashBoardName) throws Exception
 	{
 		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
@@ -300,21 +303,28 @@ public class AddDifferentWidgets extends BaseClass {
 		for(int i=1;i<frqOptions.size();i++)
 		{
 			sel.selectByIndex(i);
-			sel.selectByVisibleText("Unaggregated");
+			
 		}
+		sel.selectByVisibleText("Unaggregated");
 
-		jse = (JavascriptExecutor) ndriver;
-		jse.executeScript("window.scrollBy(0,1000)");
-
+//		jse = (JavascriptExecutor) ndriver;
+//		jse.executeScript("window.scrollBy(0,1000)");
+		Thread.sleep(3000);
+		JavaScriptOperation.scrollToElement(selectSensor);
+		JavaScriptOperation.scrollToElement(selectPlant);
 
 		applyExplicitWaitsUntilElementClickable(selectPlant,30).click(); //select ANGAT
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(menuANGAT,30).click();
+		
+		
 		//			acn.moveToElement(selectPlant).click().sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
-		applyExplicitWaitsUntilElementClickable(selectPlant,30).sendKeys("ANGAT",Keys.ENTER);
+//		applyExplicitWaitsUntilElementClickable(selectPlant,30).sendKeys("ANGAT",Keys.ENTER);
 
 
 		//			acn.moveToElement(selectPlant).sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
-
-
+		Thread.sleep(2000);
+		JavaScriptOperation.scrollToElement(selectSensor);
 		applyExplicitWaitsUntilElementClickable(selectSensor,30).click();//select sensor
 		applyExplicitWaitsUntilElementClickable(sensor1,30).click();
 
@@ -374,8 +384,9 @@ public class AddDifferentWidgets extends BaseClass {
 
 	}
 
-	public void addRunHour(String widgetName) throws Exception
-	{
+	public void addRunHour(String widgetName) throws Exception	{ 
+		widget=widgetName;		
+		
 		applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
 		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
 		applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
@@ -419,6 +430,30 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(2000);
 		String notfn =notification.getText();
 		System.out.println(notfn);
+		
+		
+		//copy and delete code
+		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
+		applyExplicitWaitsUntilElementClickable(action,30).click();
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(tvMode,30).click();
+		Thread.sleep(3000);
+		acn=new Actions(ndriver);
+		acn.sendKeys(Keys.ESCAPE).build().perform();
+		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
+		applyExplicitWaitsUntilElementClickable(action,30).click();
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(clone,30).click();
+		
+//		jse = (JavascriptExecutor) ndriver;
+//		jse.executeScript("window.scrollBy(0,1000)");
+Thread.sleep(3000);
+		WebElement ccc= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
+		applyExplicitWaitsUntilElementClickable(ccc,30).click();
+		applyExplicitWaitsUntilElementClickable(action,30).click();
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(delete,30).click();
+	
 	}
 
 
@@ -465,13 +500,19 @@ public class AddDifferentWidgets extends BaseClass {
 
 		List<List<String>>	data= dataTable.asLists(String.class);
 		System.out.println(data.size());                     //1
-		System.out.println(data.get(0).size());                //3
+		System.out.println(data.get(0).size());                //2
 
 		for(int i = 0;i<data.get(0).size();i++)
 		{
 
 			String t = data.get(0).get(i);
-			Thread.sleep(1000);
+//			Thread.sleep(1000);
+			System.out.println(t);
+//selectParameters.click();
+//selectParameter.sendKeys(t);
+//WebElement para = ndriver.findElement(By.xpath("//div[contains(@class,'selectionbox_prefix__option') and text()='"+t+"']"));
+//para.click();
+//Thread.sleep(2000);
 			ndriver.findElement(By.xpath("//div[text()='"+t+"']")).click();
 			//	Thread.sleep(1000);
 			applyExplicitWaitsUntilElementClickable(selectParameters,30).click();
@@ -531,8 +572,10 @@ public class AddDifferentWidgets extends BaseClass {
 
 		//select PCB
 		applyExplicitWaitsUntilElementClickable(selectBox1,30).click(); 
-		Thread.sleep(2000);
-		ndriver.findElement(By.xpath("//div[@id='react-select-2-option-114' and text()='PSB 6']")).click();
+		Thread.sleep(1000);
+		WebElement pcb=ndriver.findElement(By.xpath("//div[@id='react-select-2-option-114' and text()='PSB 6']"));
+//		acn=new Actions(ndriver);
+		applyExplicitWaitsUntilElementClickable(pcb,50).click(); 
 		Thread.sleep(1000);
 
 		//	 select kwh	
@@ -543,7 +586,7 @@ public class AddDifferentWidgets extends BaseClass {
 		catch(Exception e) {
 			js.click(selectBox2);
 		}
-		//	//			Thread.sleep(2000);
+						Thread.sleep(2000);
 		ndriver.findElement(By.xpath("//div[@id='react-select-7-option-64' and text()='kWh']")).click();  
 
 
