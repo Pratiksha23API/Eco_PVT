@@ -11,19 +11,20 @@ Feature: create dashboard Module
 
  Scenario: Create dashboard and add different widget successfully
  Given User is on Smartsense page and add dashboard as a "QA321"
- #When User Add widget as "Map View" then Verify after refresh preview widget is should be dispayed compulsory
- #When Clone it that dispayed the widget it gets clone successfully after that delete that clone widget
- #When User Add widget as "List View" then Verify after refresh preview widget is should be dispayed compulsory
- #When Clone it that dispayed the widget it gets clone successfully after that delete that clone widget
- #When User Add widget as "RunHours" then Verify after refresh preview widget is should be dispayed compulsory
- #When Clone it that dispayed the widget it gets clone successfully after that delete that clone widget
- #When User Add widget as "Anomaly Detection" then Verify after refresh preview widget is should be dispayed compulsory
- #When Clone it that dispayed Anomly widget gets clone after delete that cloned gets delete and after edit user able to save changes
- When User Add widget as "Table" add below parameters
- |L1 L2 Voltage 1 |
- #|L1 L2 Voltage 1 | Condensing Water Supply Temperature B|
-  And  below sensors then Verify after refresh preview widget is should be dispayed compulsory
-| QA12|sensor 9| 
+ When User Add widget as "Map View" then Verify after refresh preview widget is should be dispayed compulsory
+ When Clone that dispayed "Map View" widget it gets clone and after delete that cloned widget gets delete
+ When User Add widget as "List View" then Verify after refresh preview widget is should be dispayed compulsory
+ When Clone that dispayed "List View" widget it gets clone and after delete that cloned widget gets delete
+ When User Add widget as "RunHours" then Verify after refresh preview widget is should be dispayed compulsory
+ When Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete
+ When User Add widget as "Anomaly Detection" then Verify after refresh preview widget is should be dispayed compulsory
+ When Clone that dispayed "Anomaly Detection" widget it gets clone and after delete that cloned widget gets delete
+ When User edit that dispayed Anomaly Detection widget it gets edited and able to save changes
+ When User Add widget as "Table" and add below parameters
+ |L1 L2 Voltage 1 |L2 Current 1|
+  And  add below sensors then Verify after refresh preview widget is should be dispayed compulsory
+| QA12|Accenture Test 1|
+ When Clone that dispayed "Table" widget it gets clone and after delete that cloned widget gets delete
 
 
  #Map View

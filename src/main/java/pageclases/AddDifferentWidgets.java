@@ -200,7 +200,7 @@ public class AddDifferentWidgets extends BaseClass {
 	////////////////////////////////////////////////////  copy	
 	@FindBy(xpath="//div[text()=' Anomaly Detection - Copy']")
 	private WebElement  copiedAnomly;
-	
+
 	@FindBy(xpath="//div[text()=' RunHours - Copy']")
 	private WebElement  copiedRunHour;
 
@@ -234,7 +234,7 @@ public class AddDifferentWidgets extends BaseClass {
 	@FindBy(xpath="//button[normalize-space()='Save Changes']")
 	private WebElement saveChangesBtn;
 
-    public static String widget ="";
+	public static String widget ="";
 	public String createNewDashboard(String dashBoardName) throws Exception
 	{
 		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
@@ -244,8 +244,6 @@ public class AddDifferentWidgets extends BaseClass {
 		catch(Exception e) {
 			js.click(addDashBoard);
 		}
-
-
 		applyExplicitWaitsUntilElementClickable(enterNameFiled,30).click();
 		applyExplicitWaitsUntilElementClickable(enterNameFiled,30).sendKeys(dashBoardName);
 		applyExplicitWaitsUntilElementClickable(createBtn,30).click();
@@ -255,205 +253,270 @@ public class AddDifferentWidgets extends BaseClass {
 		System.out.println(createdMessg);
 
 		return createdMessg;
-
-
 	}
 
-
-	public void addMapView(String widgetName) throws Exception
+	public void addWidget(String widgetName) throws Exception
 	{
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
-		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
-		applyExplicitWaitsUntilElementClickable(mapViewIcon,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
-
-
-		applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
-		applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
-
-		acn = new Actions(ndriver);
-		if(showAliasCheckBox.isSelected())
+		if(widgetName.equalsIgnoreCase("Map View"))
 		{
-			acn.moveToElement(showAliasCheckBox).doubleClick().build().perform();
-
-		}else {
-			acn.moveToElement(showAliasCheckBox).click().build().perform();
-		}
-		Thread.sleep(1000);
-		if(showArrowCheckBox.isSelected())
-		{
-			acn.moveToElement(showArrowCheckBox).doubleClick().build().perform();
-
-		}else {
-			acn.moveToElement(showArrowCheckBox).click().build().perform();
-		}
-		Thread.sleep(2000);
-
-		sel= new Select(selectPeriod);
-		List<WebElement> periodOptins=sel.getOptions();
-		for(int i=1;i<periodOptins.size();i++)
-		{
-			sel.selectByIndex(i);
-			sel.selectByVisibleText("last 3 months");
-		}
-
-		sel= new Select(dataFreq);
-		List<WebElement> frqOptions =sel.getOptions();
-		for(int i=1;i<frqOptions.size();i++)
-		{
-			sel.selectByIndex(i);
-			
-		}
-		sel.selectByVisibleText("Unaggregated");
-
-//		jse = (JavascriptExecutor) ndriver;
-//		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(3000);
-		JavaScriptOperation.scrollToElement(selectSensor);
-		JavaScriptOperation.scrollToElement(selectPlant);
-
-		applyExplicitWaitsUntilElementClickable(selectPlant,30).click(); //select ANGAT
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(menuANGAT,30).click();
-		
-		
-		//			acn.moveToElement(selectPlant).click().sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
-//		applyExplicitWaitsUntilElementClickable(selectPlant,30).sendKeys("ANGAT",Keys.ENTER);
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
+			applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
+			applyExplicitWaitsUntilElementClickable(mapViewIcon,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
 
 
-		//			acn.moveToElement(selectPlant).sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
-		Thread.sleep(2000);
-		JavaScriptOperation.scrollToElement(selectSensor);
-		applyExplicitWaitsUntilElementClickable(selectSensor,30).click();//select sensor
-		applyExplicitWaitsUntilElementClickable(sensor1,30).click();
+			applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
 
-		applyExplicitWaitsUntilElementClickable(selectParameter,30).click();
-		applyExplicitWaitsUntilElementClickable(totalKW,30).click();
-		//move to refresh preview			
-		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
-		Thread.sleep(2000);
+			acn = new Actions(ndriver);
+			if(showAliasCheckBox.isSelected())
+			{
+				acn.moveToElement(showAliasCheckBox).doubleClick().build().perform();
 
-		//click on widget			
-		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-		Thread.sleep(2000);
-		String notfn =notification.getText();
-		System.out.println(notfn);
-
-		//		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();	
-		//		applyExplicitWaitsUntilElementClickable(action,30).click();	
-		//		applyExplicitWaitsUntilElementClickable(tvMode,30).click();	
-		//		acn.sendKeys(Keys.ESCAPE).build().perform();
-
-
-	}
-
-	public void addListView(String widgetName) throws Exception
-	{
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
-		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
-
-		//	acn.moveToElement(widgetsBody).scrollToElement(listViewMenu).click().build().perform();
-		applyExplicitWaitsUntilElementClickable(listViewMenu,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
-
-		applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
-		applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
-
-		jse = (JavascriptExecutor) ndriver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(enterAliasname,30).sendKeys("aa");
-		applyExplicitWaitsUntilElementClickable(EnterValue,30).sendKeys("aa");
-		applyExplicitWaitsUntilElementClickable(addBtn,50).click();
-
-		applyExplicitWaitsUntilElementClickable(reAliasName,30).sendKeys("bb");
-		applyExplicitWaitsUntilElementClickable(reValue,30).sendKeys("bb");
-		//	Thread.sleep(1000);
-
-		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(refreshPreview,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-		Thread.sleep(2000);
-		String notfn =notification.getText();
-		System.out.println(notfn);
-
-	}
-
-	public void addRunHour(String widgetName) throws Exception	{ 
-		widget=widgetName;		
-		
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
-		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
-		applyExplicitWaitsUntilElementClickable(runHourMenu,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
-		applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
-		applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
-
-
-		sel= new Select(selectPeriod);
-		List<WebElement> periodOptins=sel.getOptions();
-		for(int i=1;i<periodOptins.size();i++)
-		{
-			sel.selectByIndex(i);
+			}else {
+				acn.moveToElement(showAliasCheckBox).click().build().perform();
+			}
 			Thread.sleep(1000);
-			sel.selectByVisibleText("Day");
-		}
+			if(showArrowCheckBox.isSelected())
+			{
+				acn.moveToElement(showArrowCheckBox).doubleClick().build().perform();
 
-		sel= new Select(dataFreq);
-		List<WebElement> frqOptions =sel.getOptions();
-		for(int i=1;i<frqOptions.size();i++)
+			}else {
+				acn.moveToElement(showArrowCheckBox).click().build().perform();
+			}
+			Thread.sleep(2000);
+
+			sel= new Select(selectPeriod);
+			List<WebElement> periodOptins=sel.getOptions();
+			for(int i=1;i<periodOptins.size();i++)
+			{
+				sel.selectByIndex(i);
+				sel.selectByVisibleText("last 3 months");
+			}
+
+			sel= new Select(dataFreq);
+			List<WebElement> frqOptions =sel.getOptions();
+			for(int i=1;i<frqOptions.size();i++)
+			{
+				sel.selectByIndex(i);
+
+			}
+			sel.selectByVisibleText("Unaggregated");
+
+			//		jse = (JavascriptExecutor) ndriver;
+			//		jse.executeScript("window.scrollBy(0,1000)");
+			Thread.sleep(3000);
+			JavaScriptOperation.scrollToElement(selectSensor);
+			JavaScriptOperation.scrollToElement(selectPlant);
+
+			applyExplicitWaitsUntilElementClickable(selectPlant,30).click(); //select ANGAT
+			Thread.sleep(2000);
+			applyExplicitWaitsUntilElementClickable(menuANGAT,30).click();
+
+
+			//			acn.moveToElement(selectPlant).click().sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
+			//		applyExplicitWaitsUntilElementClickable(selectPlant,30).sendKeys("ANGAT",Keys.ENTER);
+
+
+			//			acn.moveToElement(selectPlant).sendKeys("ANGAT").sendKeys(Keys.ENTER).build().perform();
+			Thread.sleep(2000);
+			JavaScriptOperation.scrollToElement(selectSensor);
+			applyExplicitWaitsUntilElementClickable(selectSensor,30).click();//select sensor
+			applyExplicitWaitsUntilElementClickable(sensor1,30).click();
+
+			applyExplicitWaitsUntilElementClickable(selectParameter,30).click();
+			applyExplicitWaitsUntilElementClickable(totalKW,30).click();
+			//move to refresh preview			
+			acn= new Actions(ndriver);
+			acn.moveToElement(refreshPreview).click().perform();
+			Thread.sleep(2000);
+
+			//click on widget			
+			applyExplicitWaitsUntilElementClickable(addWidget,30).click();
+			Thread.sleep(2000);
+			String notfn =notification.getText();
+			System.out.println(notfn);
+
+		}
+		else if(widgetName.equalsIgnoreCase("List View"))
 		{
-			sel.selectByIndex(i);
-			sel.selectByVisibleText("60 min");
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
+			applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
+
+			//	acn.moveToElement(widgetsBody).scrollToElement(listViewMenu).click().build().perform();
+			applyExplicitWaitsUntilElementClickable(listViewMenu,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
+
+			applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
+
+			jse = (JavascriptExecutor) ndriver;
+			jse.executeScript("window.scrollBy(0,1000)");
+			Thread.sleep(1000);
+			applyExplicitWaitsUntilElementClickable(enterAliasname,30).sendKeys("aa");
+			applyExplicitWaitsUntilElementClickable(EnterValue,30).sendKeys("aa");
+			applyExplicitWaitsUntilElementClickable(addBtn,50).click();
+
+			applyExplicitWaitsUntilElementClickable(reAliasName,30).sendKeys("bb");
+			applyExplicitWaitsUntilElementClickable(reValue,30).sendKeys("bb");
+			//	Thread.sleep(1000);
+
+			acn= new Actions(ndriver);
+			acn.moveToElement(refreshPreview).click().perform();
+			Thread.sleep(2000);
+			applyExplicitWaitsUntilElementClickable(refreshPreview,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidget,30).click();
+			Thread.sleep(2000);
+			String notfn =notification.getText();
+			System.out.println(notfn);
+
+		}
+		else if(widgetName.equalsIgnoreCase("RunHours"))
+		{
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
+			applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
+			applyExplicitWaitsUntilElementClickable(runHourMenu,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
+			applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
+
+
+			sel= new Select(selectPeriod);
+			List<WebElement> periodOptins=sel.getOptions();
+			for(int i=1;i<periodOptins.size();i++)
+			{
+				sel.selectByIndex(i);
+				Thread.sleep(1000);
+				sel.selectByVisibleText("Day");
+			}
+
+			sel= new Select(dataFreq);
+			List<WebElement> frqOptions =sel.getOptions();
+			for(int i=1;i<frqOptions.size();i++)
+			{
+				sel.selectByIndex(i);
+				sel.selectByVisibleText("60 min");
+			}
+
+			jse = (JavascriptExecutor) ndriver;
+			jse.executeScript("window.scrollBy(0,1000)");
+			Thread.sleep(1000);
+			applyExplicitWaitsUntilElementClickable(aliseName,50).sendKeys("alis");
+			applyExplicitWaitsUntilElementClickable(locatn,50).click();
+			ndriver.findElement(By.xpath("//div[text()='test12']")).click();
+
+			applyExplicitWaitsUntilElementClickable(parameter,50).click();
+			ndriver.findElement(By.xpath("//div[text()='KVA']")).click();
+
+			acn= new Actions(ndriver);
+			acn.moveToElement(refreshPreview).click().perform();
+			Thread.sleep(2000);
+			applyExplicitWaitsUntilElementClickable(addWidget,30).click();
+			Thread.sleep(2000);
+			String notfn =notification.getText();
+			System.out.println(notfn);
+		}
+		else if(widgetName.equalsIgnoreCase("Anomaly Detection"))
+		{
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
+			applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
+			applyExplicitWaitsUntilElementClickable(anomallyDetectionApp ,50).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
+			applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
+
+			sel= new Select(period);
+			List<WebElement> periodOptins=sel.getOptions();
+			for(int i=1;i<periodOptins.size();i++)
+			{
+				sel.selectByIndex(i);
+				Thread.sleep(1000);
+			}
+			sel.selectByVisibleText("Day");
+
+
+			sel= new Select(dataFrequency);
+			List<WebElement> frqOptions =sel.getOptions();
+			for(int i=1;i<frqOptions.size();i++)
+			{
+				sel.selectByIndex(i);
+			}
+			sel.selectByVisibleText("1 Day");
+
+			applyExplicitWaitsUntilElementClickable(threshouldPercent,30).click();                             //enter threshould
+			applyExplicitWaitsUntilElementClickable(threshouldPercent,30).sendKeys("20");                           //50
+
+
+			applyExplicitWaitsUntilElementClickable(trainingWeek,30).click();                             //trainigWeek
+			applyExplicitWaitsUntilElementClickable(trainingWeek,30).sendKeys("2");                            //2
+
+			//select PCB
+			applyExplicitWaitsUntilElementClickable(selectBox1,30).click(); 
+			Thread.sleep(1000);
+			WebElement pcb=ndriver.findElement(By.xpath("//div[@id='react-select-2-option-114' and text()='PSB 6']"));
+			//		acn=new Actions(ndriver);
+			applyExplicitWaitsUntilElementClickable(pcb,50).click(); 
+			Thread.sleep(1000);
+
+			//	 select kwh	
+			//				applyExplicitWaitsUntilElementClickable(selectBox2,30).click(); 
+			try {
+				applyExplicitWaitsUntilElementClickable(selectBox2,30).click();
+			}
+			catch(Exception e) {
+				js.click(selectBox2);
+			}
+			Thread.sleep(2000);
+			ndriver.findElement(By.xpath("//div[@id='react-select-7-option-64' and text()='kWh']")).click();  
+
+
+			//	applyExplicitWaitsUntilElementClickable(showGraphToggle,30).click();                       //togglebtn click
+			acn= new Actions(ndriver);
+			acn.moveToElement(refreshPreview).click().perform();
+			Thread.sleep(2000);
+			applyExplicitWaitsUntilElementClickable(addWidget,30).click();
+			Thread.sleep(2000);
+			String notfn =notification.getText();
+			System.out.println(notfn);
 		}
 
-		jse = (JavascriptExecutor) ndriver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(aliseName,50).sendKeys("alis");
-		applyExplicitWaitsUntilElementClickable(locatn,50).click();
-		ndriver.findElement(By.xpath("//div[text()='test12']")).click();
+	}
 
-		applyExplicitWaitsUntilElementClickable(parameter,50).click();
-		ndriver.findElement(By.xpath("//div[text()='KVA']")).click();
+	public void copyAndDeleteCopiedWidget(String widgetName) throws Exception      
+	{ 
+		widget=widgetName;		
+	//copy and delete code
+	applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
+	applyExplicitWaitsUntilElementClickable(action,30).click();
+	Thread.sleep(2000);
+	applyExplicitWaitsUntilElementClickable(tvMode,30).click();
+	Thread.sleep(3000);
+	acn=new Actions(ndriver);
+	acn.sendKeys(Keys.ESCAPE).build().perform();
+	Thread.sleep(1000);
+	applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
+	applyExplicitWaitsUntilElementClickable(action,30).click();
+	Thread.sleep(2000);
+	applyExplicitWaitsUntilElementClickable(clone,30).click();
 
-		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-		Thread.sleep(2000);
-		String notfn =notification.getText();
-		System.out.println(notfn);
-		
-		
-		//copy and delete code
-		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(tvMode,30).click();
-		Thread.sleep(3000);
-		acn=new Actions(ndriver);
-		acn.sendKeys(Keys.ESCAPE).build().perform();
-		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(clone,30).click();
-		
-//		jse = (JavascriptExecutor) ndriver;
-//		jse.executeScript("window.scrollBy(0,1000)");
-Thread.sleep(3000);
-		WebElement ccc= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
-		applyExplicitWaitsUntilElementClickable(ccc,30).click();
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(delete,30).click();
-	
+	//		jse = (JavascriptExecutor) ndriver;
+	//		jse.executeScript("window.scrollBy(0,1000)");
+	Thread.sleep(3000);
+	WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
+	applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
+	applyExplicitWaitsUntilElementClickable(action,30).click();
+	Thread.sleep(2000);
+	applyExplicitWaitsUntilElementClickable(delete,30).click();
+	Thread.sleep(1000);
+	applyExplicitWaitsUntilElementClickable(okBtn, 30).click(); 
+	Thread.sleep(2000);
+	String notfn =notification.getText();
+	System.out.println(notfn);
+
 	}
 
 
@@ -474,48 +537,55 @@ Thread.sleep(3000);
 
 	}
 
-	public void selectSensorsforTableWidget(io.cucumber.datatable.DataTable dataTable ) throws Exception
-	{
-
-		applyExplicitWaitsUntilElementClickable(selectSensors,30).click();
-
-		List<List<String>>	data= dataTable.asLists(String.class);
-		System.out.println(data.size());
-		System.out.println(data.get(0).size());
-
-		for(int i = 0;i<data.get(0).size();i++)
-		{
-			String t = data.get(0).get(i);
-			ndriver.findElement(By.xpath("//div[text()='"+t+"']")).click();
-			applyExplicitWaitsUntilElementClickable(selectSensors,30).click();
-			//	ndriver.findElement(By.xpath("//div[@class='user-suggestion-contaner']/ul/li[text()='"+ data.get(0).get(1)+"']")).click();
-		}
-
-	}
-
 	public void selectParametersforTableWidget(io.cucumber.datatable.DataTable dataTable ) throws Exception
 	{
 
 		applyExplicitWaitsUntilElementClickable(selectParameters,30).click();
-
+		Thread.sleep(2000);
 		List<List<String>>	data= dataTable.asLists(String.class);
 		System.out.println(data.size());                     //1
 		System.out.println(data.get(0).size());                //2
 
 		for(int i = 0;i<data.get(0).size();i++)
 		{
-
+			//			applyExplicitWaitsUntilElementClickable(selectParameters,30).click();
 			String t = data.get(0).get(i);
-//			Thread.sleep(1000);
-			System.out.println(t);
-//selectParameters.click();
-//selectParameter.sendKeys(t);
-//WebElement para = ndriver.findElement(By.xpath("//div[contains(@class,'selectionbox_prefix__option') and text()='"+t+"']"));
-//para.click();
-//Thread.sleep(2000);
-			ndriver.findElement(By.xpath("//div[text()='"+t+"']")).click();
+			//			Thread.sleep(1000);
+			//			System.out.println(t);
+			//			ndriver.findElement(By.xpath("//div[text()='"+t+"']")).click();
+			//			
+
+
+			selectParameters.click();
+			selectParameter.sendKeys(t);
+			WebElement para = ndriver.findElement(By.xpath("//div[contains(@class,'selectionbox_prefix__option') and text()='"+t+"']"));
+			para.click();
+			Thread.sleep(2000);
+
+
 			//	Thread.sleep(1000);
-			applyExplicitWaitsUntilElementClickable(selectParameters,30).click();
+
+			//			ndriver.findElement(By.xpath("//div[text()='"+ data.get(0).get(1)+"']")).click();
+		}
+
+	}
+
+	public void selectSensorsforTableWidget(io.cucumber.datatable.DataTable dataTable ) throws Exception
+	{
+
+		applyExplicitWaitsUntilElementClickable(selectSensors,30).click();
+		Thread.sleep(2000);
+		List<List<String>>	data= dataTable.asLists(String.class);
+		System.out.println(data.size());
+		System.out.println(data.get(0).size());
+
+		for(int i = 0;i<data.get(0).size();i++)
+		{
+			applyExplicitWaitsUntilElementClickable(selectSensors,30).click();
+			String t = data.get(0).get(i);
+			ndriver.findElement(By.xpath("//div[text()='"+t+"']")).click();
+			//			Thread.sleep(1000);
+
 			//	ndriver.findElement(By.xpath("//div[@class='user-suggestion-contaner']/ul/li[text()='"+ data.get(0).get(1)+"']")).click();
 		}
 
@@ -524,9 +594,11 @@ Thread.sleep(3000);
 	public void clickOnRefreshAndAddWidget() throws Exception
 	{
 
-		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
-		Thread.sleep(2000);
+		//		acn= new Actions(ndriver);
+		//		acn.moveToElement(refreshPreview).click().perform();
+		JavaScriptOperation.scrollToElement(refreshPreview);
+		applyExplicitWaitsUntilElementClickable(refreshPreview,30).click();
+		Thread.sleep(3000);
 		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
 		Thread.sleep(2000);
 		String notfn =notification.getText();
@@ -534,104 +606,40 @@ Thread.sleep(3000);
 	}
 
 
-	public void addAnomalyDetection(String widgetName) throws Exception
+
+	public void editAnomlyWidgetAndSaveChanges() throws Exception
 	{
-
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
-		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetsMenu,50).click();
-		applyExplicitWaitsUntilElementClickable(anomallyDetectionApp ,50).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetMenuBtn,50).click();
-		applyExplicitWaitsUntilElementClickable(widgetNameField,30).sendKeys(widgetName);
-		applyExplicitWaitsUntilElementClickable(widgetDescription,30).sendKeys(widgetName);
-
-		sel= new Select(period);
-		List<WebElement> periodOptins=sel.getOptions();
-		for(int i=1;i<periodOptins.size();i++)
-		{
-			sel.selectByIndex(i);
-			Thread.sleep(1000);
-		}
-		sel.selectByVisibleText("Day");
-
-
-		sel= new Select(dataFrequency);
-		List<WebElement> frqOptions =sel.getOptions();
-		for(int i=1;i<frqOptions.size();i++)
-		{
-			sel.selectByIndex(i);
-		}
-		sel.selectByVisibleText("1 Day");
-
-		applyExplicitWaitsUntilElementClickable(threshouldPercent,30).click();                             //enter threshould
-		applyExplicitWaitsUntilElementClickable(threshouldPercent,30).sendKeys("20");                           //50
-
-
-		applyExplicitWaitsUntilElementClickable(trainingWeek,30).click();                             //trainigWeek
-		applyExplicitWaitsUntilElementClickable(trainingWeek,30).sendKeys("2");                            //2
-
-		//select PCB
-		applyExplicitWaitsUntilElementClickable(selectBox1,30).click(); 
-		Thread.sleep(1000);
-		WebElement pcb=ndriver.findElement(By.xpath("//div[@id='react-select-2-option-114' and text()='PSB 6']"));
-//		acn=new Actions(ndriver);
-		applyExplicitWaitsUntilElementClickable(pcb,50).click(); 
-		Thread.sleep(1000);
-
-		//	 select kwh	
-		//				applyExplicitWaitsUntilElementClickable(selectBox2,30).click(); 
-		try {
-			applyExplicitWaitsUntilElementClickable(selectBox2,30).click();
-		}
-		catch(Exception e) {
-			js.click(selectBox2);
-		}
-						Thread.sleep(2000);
-		ndriver.findElement(By.xpath("//div[@id='react-select-7-option-64' and text()='kWh']")).click();  
-
-
-		//	applyExplicitWaitsUntilElementClickable(showGraphToggle,30).click();                       //togglebtn click
-		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
-		Thread.sleep(2000);
-		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-		Thread.sleep(2000);
-		String notfn =notification.getText();
-		System.out.println(notfn);
-
-	}
-
-	public void copyAndEditAnomly() throws Exception
-	{
-		acn=new Actions(ndriver);
-		applyExplicitWaitsUntilElementClickable( addedWidgetVerticlIcon,30);
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(tvMode,30).click();
-		acn.sendKeys(Keys.ESCAPE).perform();
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(clone,30).click();
-		Thread.sleep(1000);
-		jse= (JavascriptExecutor)ndriver;
-		jse.executeScript("window.scrollBy(0,1000)");
-		boolean s = isWebElementDisplayed(copiedAnomly);
-		if(s)
-		{
-			System.out.println("AnomlyWidget clone succefully");
-		}
-		else {
-			System.out.println("AnomlyWidget not clone succefully");
-
-		}
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable( copiedAnomlyVerticalIcon,30).click();
-		applyExplicitWaitsUntilElementClickable(action,30).click();
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(delete,30).click();
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(okBtn, 30).click();    
+		//		acn=new Actions(ndriver);
+		//		applyExplicitWaitsUntilElementClickable( addedWidgetVerticlIcon,30);
+		//		applyExplicitWaitsUntilElementClickable(action,30).click();
+		//		Thread.sleep(1000);
+		//		applyExplicitWaitsUntilElementClickable(tvMode,30).click();
+		//		acn.sendKeys(Keys.ESCAPE).perform();
+		//		applyExplicitWaitsUntilElementClickable(action,30).click();
+		//		Thread.sleep(1000);
+		//		applyExplicitWaitsUntilElementClickable(clone,30).click();
+		//		Thread.sleep(1000);
+		//		jse= (JavascriptExecutor)ndriver;
+		//		jse.executeScript("window.scrollBy(0,1000)");
+		//		boolean s = isWebElementDisplayed(copiedAnomly);
+		//		if(s)
+		//		{
+		//			System.out.println("AnomlyWidget clone succefully");
+		//		}
+		//		else {
+		//			System.out.println("AnomlyWidget not clone succefully");
 		//
+		//		}
+		//		Thread.sleep(1000);
+		//		applyExplicitWaitsUntilElementClickable( copiedAnomlyVerticalIcon,30).click();
+		//		applyExplicitWaitsUntilElementClickable(action,30).click();
+		//		Thread.sleep(1000);
+		//		applyExplicitWaitsUntilElementClickable(delete,30).click();
+		//		Thread.sleep(1000);
+		//		applyExplicitWaitsUntilElementClickable(okBtn, 30).click();    
+		//
+
+
 		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon, 30).click();  
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(edit, 30).click();  
@@ -648,10 +656,7 @@ Thread.sleep(3000);
 		Thread.sleep(1000);
 
 		applyExplicitWaitsUntilElementClickable(saveChangesBtn,30).click();
-
-
-
-
+		Thread.sleep(2000);
 	}
 
 }
