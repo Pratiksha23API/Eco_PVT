@@ -25,34 +25,37 @@ public class AddDifferentWidgetsSteps {
 	@When("User Add widget as {string} then Verify after refresh preview widget is should be dispayed compulsory")
 	public void user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(String widgetName) throws Exception {
 
-		widgets.addWidget(widgetName);
+		String addNotification =widgets.addWidget(widgetName);
+		Assert.assertEquals(addNotification, "Widget Added");
+//		widgets.copyAndDeleteCopiedWidget(widgetName);
 	}
 
 	@When("Clone that dispayed {string} widget it gets clone and after delete that cloned widget gets delete")
 	public void clone_that_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_gets_delete(String widgetName) throws Exception {
-		widgets.copyAndDeleteCopiedWidget(widgetName);;
+		String deleteNotification =widgets.copyAndDeleteCopiedWidget(widgetName);
+		Assert.assertEquals(deleteNotification, "Widget Deleted");
 
 	}
-
-	@When("User edit that dispayed Anomaly Detection widget it gets edited and able to save changes")
-	public void user_edit_that_dispayed_anomaly_detection_widget_it_gets_edited_and_able_to_save_changes() throws Exception {
-
-		widgets.editAnomlyWidgetAndSaveChanges();
-
-	}
-
-	@When("User Add widget as {string} and add below parameters")
-	public void user_add_widget_as_and_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
-		widgets.addTable(widgetTable);
-		widgets.selectParametersforTableWidget(dataTable);
-
-	}
-
-	@When("add below sensors then Verify after refresh preview widget is should be dispayed compulsory")
-	public void add_below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
-
-		widgets.selectSensorsforTableWidget(dataTable);
-		widgets.clickOnRefreshAndAddWidget();
-	}
+//
+//	@When("User edit that dispayed Anomaly Detection widget it gets edited and able to save changes")
+//	public void user_edit_that_dispayed_anomaly_detection_widget_it_gets_edited_and_able_to_save_changes() throws Exception {
+//
+////		widgets.editAnomlyWidgetAndSaveChanges();
+//
+//	}
+//
+//	@When("User Add widget as {string} and add below parameters")
+//	public void user_add_widget_as_and_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
+////		widgets.addTable(widgetTable);
+////		widgets.selectParametersforTableWidget(dataTable);
+//
+//	}
+//
+//	@When("add below sensors then Verify after refresh preview widget is should be dispayed compulsory")
+//	public void add_below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
+//
+////		widgets.selectSensorsforTableWidget(dataTable);
+////		widgets.clickOnRefreshAndAddWidget();
+//	}
 
 }
