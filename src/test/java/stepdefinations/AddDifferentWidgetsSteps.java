@@ -27,7 +27,6 @@ public class AddDifferentWidgetsSteps {
 
 		String addNotification =widgets.addWidget(widgetName);
 		Assert.assertEquals(addNotification, "Widget Added");
-//		widgets.copyAndDeleteCopiedWidget(widgetName);
 	}
 
 	@When("Clone that dispayed {string} widget it gets clone and after delete that cloned widget gets delete")
@@ -36,13 +35,13 @@ public class AddDifferentWidgetsSteps {
 		Assert.assertEquals(deleteNotification, "Widget Deleted");
 
 	}
-//
-//	@When("User edit that dispayed Anomaly Detection widget it gets edited and able to save changes")
-//	public void user_edit_that_dispayed_anomaly_detection_widget_it_gets_edited_and_able_to_save_changes() throws Exception {
-//
-////		widgets.editAnomlyWidgetAndSaveChanges();
-//
-//	}
+
+	@When("User edit that dispayed {string} widget it gets edited and able to save changes")
+	public void user_edit_that_dispayed_widget_it_gets_edited_and_able_to_save_changes(String widgetName) throws Exception {
+
+		widgets.editAnomlyWidgetAndSaveChanges(widgetName);
+	
+	}
 //
 //	@When("User Add widget as {string} and add below parameters")
 //	public void user_add_widget_as_and_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {

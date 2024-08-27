@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = {"src\\test\\resources\\features\\AddDifferentWidgets.feature"},
 //features= {"C:\\Users\\LENOVO\\git\\repository2\\Eco_PVT_LTD\\src\\test\\resources\\features\\AddWidgetsWithGraphType.feature"},
 		glue= {"stepdefinations"},
-		dryRun= false,
+		dryRun= true,
 		monochrome=true,
 		//				tags={"@tag2" "@Login"},
 		//		plugin = {"pretty"}
