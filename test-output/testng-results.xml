@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-01T14:15:55 IST" name="Default suite" finished-at="2024-09-01T14:16:48 IST" duration-ms="52893">
+  <suite started-at="2024-09-01T15:04:43 IST" name="Default suite" finished-at="2024-09-01T15:05:21 IST" duration-ms="37765">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-09-01T14:15:55 IST" name="Default test" finished-at="2024-09-01T14:16:48 IST" duration-ms="52893">
+    <test started-at="2024-09-01T15:04:43 IST" name="Default test" finished-at="2024-09-01T15:05:21 IST" duration-ms="37765">
       <class name="testrunner.SmartSenseRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T14:15:55 IST" name="setUpClass" finished-at="2024-09-01T14:15:56 IST" duration-ms="1272" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T15:04:43 IST" name="setUpClass" finished-at="2024-09-01T15:04:45 IST" duration-ms="1289" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5fc1e4fb]]>
+                <![CDATA[org.testng.TestRunner@1ad1c363]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T14:15:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-01T14:16:04 IST" duration-ms="7564" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T15:04:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-01T15:04:53 IST" duration-ms="7897" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,14 +30,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["create dashboard Module"]]>
+                <![CDATA["create dashboard Module and Add ListView widget"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T14:16:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-01T14:16:42 IST" duration-ms="38480" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T15:04:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-01T15:05:18 IST" duration-ms="25709" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,56 +46,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["create dashboard Module"]]>
+                <![CDATA["create dashboard Module and Add ListView widget"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown']"}
-  (Session info: chrome=128.0.6613.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [491dbf69f4dda30627efadd867c54180, findElement {value=//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.86, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59955}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59955/devtoo..., se:cdpVersion: 128.0.6613.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 491dbf69f4dda30627efadd867c54180]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown']"}
-  (Session info: chrome=128.0.6613.86)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.20.0', revision: '866c76ca80'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [491dbf69f4dda30627efadd867c54180, findElement {value=//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.86, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59955}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59955/devtoo..., se:cdpVersion: 128.0.6613.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 491dbf69f4dda30627efadd867c54180
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pageclases.AddDifferentWidgets.copyAndDeleteCopiedWidget(AddDifferentWidgets.java:534)
-at stepdefinations.AddDifferentWidgetsSteps.clone_that_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_gets_delete(AddDifferentWidgetsSteps.java:34)
-at ✽.Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/features/AddDifferentWidgets.feature:18)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T14:16:42 IST" name="tearDownClass" finished-at="2024-09-01T14:16:48 IST" duration-ms="5479" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-01T15:05:18 IST" name="tearDownClass" finished-at="2024-09-01T15:05:21 IST" duration-ms="2781" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

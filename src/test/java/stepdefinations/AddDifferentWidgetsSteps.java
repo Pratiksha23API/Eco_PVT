@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 import drivers.DriverFactory;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageclases.AddDifferentWidgets;
 
@@ -64,6 +65,15 @@ public class AddDifferentWidgetsSteps {
 //		String updateTableWidget=widgets.editTableWidget(widgetName);
 //		Assert.assertEquals(updateTableWidget, "Widget Updated");
 	}
+	
+	@Then("Affter that delete created dashboard and user will get messg as {string}")
+	public void affter_that_delete_created_dashboard_and_user_will_get_messg_as(String deleteMessg) throws Exception {
+		 String deleteNotfn = widgets.deleteCreatedDashboard();
+	        boolean isPresent = deleteNotfn.contains(deleteMessg);
+			Assert.assertTrue(isPresent);
+	}
+
+
 
 
 

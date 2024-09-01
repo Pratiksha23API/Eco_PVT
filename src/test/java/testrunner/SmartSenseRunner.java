@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 				
 				
 		
-		features = {"src\\test\\resources\\features\\AddDifferentWidgets.feature"},
+		features = {"src\\test\\resources\\features\\featureOfWidgets\\AddListView.feature"},
 		glue= {"stepdefinations"},
 		dryRun= false,
 		monochrome=true,

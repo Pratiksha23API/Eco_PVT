@@ -255,10 +255,12 @@ public class AddDifferentWidgets extends BaseClass {
 
 	@FindBy(xpath="(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[1]")
 	private WebElement tableLocatn;
+	
 	@FindBy(xpath="(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[2]")
 	private WebElement tableParameter;
 
-
+	@FindBy(xpath="//button[normalize-space()='Delete Dashboard']")
+	private WebElement  deleteMenu ;
 
 	public static String widget ="";
 	public String createNewDashboard(String dashBoardName) throws Exception
@@ -528,13 +530,13 @@ public class AddDifferentWidgets extends BaseClass {
 		widget=widgetName;		
 		//copy and delete code
 		acn=new Actions(ndriver);
-		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(1000);
+//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+//		Thread.sleep(1000);
 
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
 		//		Thread.sleep(1000);
 		JavaScriptOperation.scrollToElement(addedwidgetIcon);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 		//		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
@@ -558,17 +560,20 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(1000);
 		//				jse = (JavascriptExecutor) ndriver;
 		//				jse.executeScript("window.scrollBy(0,2000)");
-		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 
 		Thread.sleep(3000);
 		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
 		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
+		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
 
 		WebElement actn = ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		applyExplicitWaitsUntilElementClickable(actn,30).click();
 		//		applyExplicitWaitsUntilElementClickable(action,50).click();
 		Thread.sleep(2000);
+//		JavaScriptOperation.scrollToElement(delete);
+//		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(delete,30).click();
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(okBtn, 30).click(); 
@@ -821,6 +826,27 @@ public class AddDifferentWidgets extends BaseClass {
 		System.out.println(notfn);
 		return notfn;
 
+	}
+	
+	
+
+	public String deleteCreatedDashboard() throws Exception
+	{
+		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		applyExplicitWaitsUntilElementClickable(activeVerticalIcon,30).click();
+		Thread.sleep(1000);
+		try {
+			applyExplicitWaitsUntilElementClickable(deleteMenu,30).click();
+		}
+		catch(Exception e) {
+			js.click(deleteMenu);
+		}
+//		applyExplicitWaitsUntilElementClickable(deleteMenu,30).click(); 
+		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementClickable(okBtn, 30).click();
+		Thread.sleep(1000);
+		String deleteNotifn =notification.getText();
+		return deleteNotifn;
 	}
 
 }
