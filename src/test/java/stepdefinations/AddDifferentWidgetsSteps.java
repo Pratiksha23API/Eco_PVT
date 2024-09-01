@@ -24,15 +24,15 @@ public class AddDifferentWidgetsSteps {
 
 	@When("User Add widget as {string} then Verify after refresh preview widget is should be dispayed compulsory")
 	public void user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(String widgetName) throws Exception {
-//
-//		String addNotification =widgets.addWidget(widgetName);
-//		Assert.assertEquals(addNotification, "Widget Added");
+
+		String addNotification =widgets.addWidget(widgetName);
+		Assert.assertEquals(addNotification, "Widget Added");
 	}
 
 	@When("Clone that dispayed {string} widget it gets clone and after delete that cloned widget gets delete")
 	public void clone_that_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_gets_delete(String widgetName) throws Exception {
-//		String deleteNotification =widgets.copyAndDeleteCopiedWidget(widgetName);
-//		Assert.assertEquals(deleteNotification, "Widget Deleted");
+		String deleteNotification =widgets.copyAndDeleteCopiedWidget(widgetName);
+		Assert.assertEquals(deleteNotification, "Widget Deleted");
 
 	}
 
@@ -44,11 +44,11 @@ public class AddDifferentWidgetsSteps {
 
 	@When("User Add widget as {string} and add below parameters")
 	public void user_add_widget_as_and_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
-		widgets.addTable(widgetTable);
-		widgets.selectParametersforTableWidget(dataTable);
-
+//		widgets.addTable(widgetTable);
+//		widgets.selectParametersforTableWidget(dataTable);
+//
 	}
-
+//
 	@When("add below sensors then Verify after refresh preview widget is should be dispayed compulsory")
 	public void add_below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
 

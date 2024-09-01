@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 28, 2024 09:11:38 pm</span></a>
+<a href="#"><span class="badge badge-primary">Sep 1, 2024 02:15:55 pm</span></a>
 </li>
 </ul>
 </div>
@@ -97,7 +97,7 @@
           <div class="test-detail">
             <p class="name">create dashboard Module</p>
             <p class="text-sm">
-              <span>9:11:40 pm</span> / <span>00:00:22:259</span>
+              <span>2:15:57 pm</span> / <span>00:00:45:678</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -106,9 +106,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">create dashboard Module</h5>
-<span class='badge badge-success'>08.28.2024 9:11:40 pm</span>
-<span class='badge badge-danger'>08.28.2024 9:12:02 pm</span>
-<span class='badge badge-default'>00:00:22:259</span>
+<span class='badge badge-success'>09.01.2024 2:15:57 pm</span>
+<span class='badge badge-danger'>09.01.2024 2:16:42 pm</span>
+<span class='badge badge-default'>00:00:45:678</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -167,24 +167,32 @@
         <div class="">
           <div class="card-body">
               <div class="step pass-bg" title="stepdefinations.AddDifferentWidgetsSteps.user_is_on_smartsense_page_and_add_dashboard_as_a(java.lang.String)">
-                <span>Given User is on Smartsense page and add dashboard as a "QA98"</span>
+                <span>Given User is on Smartsense page and add dashboard as a "QA21"</span>
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="stepdefinations.AddDifferentWidgetsSteps.user_add_widget_as_and_add_below_parameters(java.lang.String,io.cucumber.datatable.DataTable)">
-                <span>When User Add widget as "Table" and add below parameters</span>
-      <div><table class='markup-table table '><tr><td>L2 Current 1</td><td>Cooling Tower Water Conductivity A</td><td>Cooling Tower Water Conductivity</td></tr></table>
-      </div>
+              <div class="step pass-bg" title="stepdefinations.AddDifferentWidgetsSteps.user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(java.lang.String)">
+                <span>When User Add widget as "List View" then Verify after refresh preview widget is should be dispayed compulsory</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=128.0.6613.85)
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.AddDifferentWidgetsSteps.user_add_widget_as_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(java.lang.String)">
+                <span>When User Add widget as "RunHours" then Verify after refresh preview widget is should be dispayed compulsory</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinations.AddDifferentWidgetsSteps.clone_that_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_gets_delete(java.lang.String)">
+                <span>When Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown']"}
+  (Session info: chrome=128.0.6613.86)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7b1448e2eff376dd80c3000598ab7a27, sendKeysToElement {id=f.689B34829DB6CC72079DA1D521C2D503.d.0AB37071831E8904CE2ABA622150BF44.e.118, value=[Ljava.lang.CharSequence;@60e3c26e}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.85, chrome: {chromedriverVersion: 128.0.6613.84 (606aa55c7d68..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59229}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59229/devtoo..., se:cdpVersion: 128.0.6613.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (7b1448e2eff376dd80c3000598ab7a27)] -> xpath: (//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[1]]
-Session ID: 7b1448e2eff376dd80c3000598ab7a27
+Command: [491dbf69f4dda30627efadd867c54180, findElement {value=//div[normalize-space() = 'RunHours']//following ::div//div[@class='_Dropdown dropdown'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.86, chrome: {chromedriverVersion: 128.0.6613.86 (3045ed680fda..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59955}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59955/devtoo..., se:cdpVersion: 128.0.6613.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 491dbf69f4dda30627efadd867c54180
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -195,24 +203,15 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
-	at pageclases.AddDifferentWidgets.selectParametersforTableWidget(AddDifferentWidgets.java:658)
-	at stepdefinations.AddDifferentWidgetsSteps.user_add_widget_as_and_add_below_parameters(AddDifferentWidgetsSteps.java:48)
-	at ✽.User Add widget as "Table" and add below parameters(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/features/AddDifferentWidgets.feature:24)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageclases.AddDifferentWidgets.copyAndDeleteCopiedWidget(AddDifferentWidgets.java:534)
+	at stepdefinations.AddDifferentWidgetsSteps.clone_that_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_gets_delete(AddDifferentWidgetsSteps.java:34)
+	at ✽.Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/features/AddDifferentWidgets.feature:18)
 </textarea>
       
-      </div>
-              </div>
-              <div class="step skip-bg" title="stepdefinations.AddDifferentWidgetsSteps.add_below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable)">
-                <span>And add below sensors then Verify after refresh preview widget is should be dispayed compulsory</span>
-      <div><table class='markup-table table '><tr><td>QA12</td><td>Accenture Test 1</td></tr></table>
-      </div>
-      <div>Step skipped
       </div>
               </div>
           </div>
@@ -243,12 +242,12 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.ElementNotInteractableException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.ElementNotInteractableException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -262,11 +261,11 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>21:11:55 pm</td>
+<td>14:16:41 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='12'>When User Add widget as "Table" and add below parameters</a>
+<a href="#" class="linked" test-id='1' id='14'>When Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete</a>
 <div class="">
-<span class="badge badge-default">create dashboard Module.Create dashboard and add different widget successfully.When User Add widget as "Table" and add below parameters</span>
+<span class="badge badge-default">create dashboard Module.Create dashboard and add different widget successfully.When Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete</span>
 </div>
 </td>
 </tr>
@@ -314,7 +313,7 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>21:11:40 pm</td>
+<td>14:15:57 pm</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Login to Eco app</a>
 <div class="">
@@ -339,13 +338,13 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 28, 2024 09:11:38 pm</h3>
+<h3>Sep 1, 2024 02:15:55 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 28, 2024 09:12:02 pm</h3>
+<h3>Sep 1, 2024 02:16:42 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -416,10 +415,10 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='77%'><b>7</b> steps passed</small></div>
+<div><small data-tooltip='90%'><b>9</b> steps passed</small></div>
 <div>
-<small data-tooltip='11%'><b>1</b> steps failed,
-<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='10%'><b>1</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -435,7 +434,7 @@ Session ID: 7b1448e2eff376dd80c3000598ab7a27
 </div></div>
 <script>
 var timeline = {
-"create dashboard Module":22.259
+"create dashboard Module":45.678
 };
 </script>
 <div class="row">
@@ -472,10 +471,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 7,
+passGrandChild: 9,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 1,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };
