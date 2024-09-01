@@ -28,7 +28,7 @@ Feature: create dashboard Module
  When Clone that dispayed "Table" widget it gets clone and after delete that cloned widget gets delete
  When User edit that dispayed table widget it gets edited and able to save changes in "Table" widget
  
-
+  
  
  
  #Map View

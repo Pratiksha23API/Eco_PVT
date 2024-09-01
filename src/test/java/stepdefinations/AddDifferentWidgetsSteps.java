@@ -39,8 +39,8 @@ public class AddDifferentWidgetsSteps {
 
 	@When("User edit dispayed anomaly widget it gets edited and able to save changes in {string} widget")
 	public void user_edit_dispayed_anomaly_widget_it_gets_edited_and_able_to_save_changes_in_widget(String widgetName) throws Exception {
-//		String updatedNotification=widgets.editAnomlyWidgetAndSaveChanges(widgetName);
-//		Assert.assertEquals(updatedNotification, "Widget Updated");
+		String updatedNotification=widgets.editAnomlyWidgetAndSaveChanges(widgetName);
+		Assert.assertEquals(updatedNotification, "Widget Updated");
 	}
 
 	@When("User Add widget as {string} and add below parameters")
