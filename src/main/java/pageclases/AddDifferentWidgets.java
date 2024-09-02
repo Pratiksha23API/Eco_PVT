@@ -539,7 +539,8 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(1000);
 
 		//		acn.moveToElement(addedwidgetIcon).click().build().perform();
-		JavaScriptOperation.scrollToElement(addedwidgetIcon);
+//JavaScriptOperation.scrollToElement(addedwidgetIcon);
+		acn.moveToElement(addedwidgetIcon);
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
@@ -707,10 +708,12 @@ public class AddDifferentWidgets extends BaseClass {
 		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(edit, 30).click(); 
-		//		Thread.sleep(2000);
+				Thread.sleep(2000);
 
 
 		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		acn.scrollToElement(tag).build().perform();
+		Thread.sleep(2000);
 		acn.moveToElement(tag).click().build().perform();
 		//
 		//JavaScriptOperation.scrollToElement(tag);
