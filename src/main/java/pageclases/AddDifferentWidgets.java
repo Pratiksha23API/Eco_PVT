@@ -212,7 +212,7 @@ public class AddDifferentWidgets extends BaseClass {
 	@FindBy(xpath="//div[@class='dropdown-menu level-1 _show']/a[text()='Edit']")
 	private WebElement edit ;
 
-	@FindBy(xpath="(//span[@class='checkmark'])[2]")
+	@FindBy(xpath="//span[text()='tag']")
 	private WebElement  tag;
 
 	@FindBy(xpath="(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[1]")
@@ -255,7 +255,7 @@ public class AddDifferentWidgets extends BaseClass {
 
 	@FindBy(xpath="(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[1]")
 	private WebElement tableLocatn;
-	
+
 	@FindBy(xpath="(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[2]")
 	private WebElement tableParameter;
 
@@ -278,6 +278,7 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(3000);
 
 		String createdMessg= notification.getText();
+		Thread.sleep(1000);
 		System.out.println(createdMessg);
 
 		return createdMessg;
@@ -354,7 +355,7 @@ public class AddDifferentWidgets extends BaseClass {
 			//Thread.sleep(2000);
 			//acn.moveToElement(selectParameter).click().build().perform();
 			//JavaScriptOperation.scrollToElement(selectParameter);
-//			Thread.sleep(3000);
+			//			Thread.sleep(3000);
 			applyExplicitWaitsUntilElementClickable(selectParameter,80).click();
 			Thread.sleep(3000);
 			applyExplicitWaitsUntilElementClickable(totalKW,30).click();
@@ -518,8 +519,9 @@ public class AddDifferentWidgets extends BaseClass {
 			acn.moveToElement(refreshPreview).click().perform();
 			Thread.sleep(2000);
 			applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			notfn =notification.getText();
+			Thread.sleep(1000);
 			System.out.println(notfn);
 		}
 		return notfn;
@@ -530,16 +532,16 @@ public class AddDifferentWidgets extends BaseClass {
 		widget=widgetName;		
 		//copy and delete code
 		acn=new Actions(ndriver);
-//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
-//		Thread.sleep(1000);
+		//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		//		Thread.sleep(1000);
 
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
-		//		Thread.sleep(1000);
-		acn.moveToElement(addedwidgetIcon).click().build().perform();
-//		JavaScriptOperation.scrollToElement(addedwidgetIcon);
+		Thread.sleep(1000);
+
+		//		acn.moveToElement(addedwidgetIcon).click().build().perform();
+		JavaScriptOperation.scrollToElement(addedwidgetIcon);
 		Thread.sleep(2000);
-//		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
-		//		applyExplicitWaitsUntilElementClickable(addedWidgetVerticlIcon,30).click();
+		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
@@ -561,23 +563,23 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(2000);
 		//				jse = (JavascriptExecutor) ndriver;
 		//				jse.executeScript("window.scrollBy(0,2000)");
-//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 
-//		Thread.sleep(3000);
+		//		Thread.sleep(3000);
 		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
 		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
-//		acn.moveToElement(copiedWidgetVIcon).click().build().perform();
-		
-Thread.sleep(1000);
-		
+		//		acn.moveToElement(copiedWidgetVIcon).click().build().perform();
+
+		Thread.sleep(1000);
+
 		WebElement actn = ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		applyExplicitWaitsUntilElementClickable(actn,30).click();
 		//		applyExplicitWaitsUntilElementClickable(action,50).click();
 		Thread.sleep(2000);
-//		JavaScriptOperation.scrollToElement(delete);
-//		Thread.sleep(1000);
+		//		JavaScriptOperation.scrollToElement(delete);
+		//		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(delete,30).click();
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(okBtn, 30).click(); 
@@ -606,46 +608,6 @@ Thread.sleep(1000);
 		Thread.sleep(1000);
 
 
-		/////////////////////////////////////////////////////////////////////////////		
-		//code to edit table widget
-
-		//		JavaScriptOperation.scrollToElement(tableBtn);
-		//		applyExplicitWaitsUntilElementClickable(tableBtn,30).click();
-		//		Thread.sleep(2000);
-		//		acn = new Actions(ndriver);
-		//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
-		//
-		//		JavaScriptOperation.scrollToElement(enterAlis);
-		//		Thread.sleep(2000);
-		//		acn.moveToElement(enterAlis).click().perform();
-		////		applyExplicitWaitsUntilElementClickable(enterAlis,60).click();
-		//		applyExplicitWaitsUntilElementClickable(enterAlis,30).sendKeys("aa");
-		//
-		//		applyExplicitWaitsUntilElementClickable(enterUnit,30).click();
-		//		applyExplicitWaitsUntilElementClickable(enterUnit,30).sendKeys("kw");
-		//		applyExplicitWaitsUntilElementClickable(enterThreshould,30).click();
-		//		applyExplicitWaitsUntilElementClickable(enterThreshould,30).sendKeys("1000");
-		//		applyExplicitWaitsUntilElementClickable(enterRow,30).click();
-		//		applyExplicitWaitsUntilElementClickable(enterRow,30).sendKeys("3");
-		//		applyExplicitWaitsUntilElementClickable(enterCol,30).click();
-		//		applyExplicitWaitsUntilElementClickable(enterCol,30).sendKeys("2");
-		//
-		//		JavaScriptOperation.scrollToElement(tableLocatn);
-		//		applyExplicitWaitsUntilElementClickable(tableLocatn,30).click();
-		//		Thread.sleep(2000);
-		//		WebElement PCB6 = ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='PSB 6']"));
-		//		applyExplicitWaitsUntilElementClickable(PCB6,30).click();
-		//
-		//		applyExplicitWaitsUntilElementClickable(tableParameter,30).click();
-		//		Thread.sleep(2000);
-		//		WebElement KWH =ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='kWh']"));
-		//		applyExplicitWaitsUntilElementClickable(KWH,30).click();
-		//		Thread.sleep(2000);
-		//		
-		//		acn.moveToElement(refreshPreview).perform();
-		//		applyExplicitWaitsUntilElementClickable(refreshPreview,30).click();
-		//		Thread.sleep(1000);
-		//
 
 	}
 
@@ -710,15 +672,17 @@ Thread.sleep(1000);
 	{
 
 		acn= new Actions(ndriver);
-		acn.moveToElement(refreshPreview).click().perform();
+		acn.sendKeys(Keys.PAGE_UP).build().perform();
+		acn.moveToElement(refreshPreview).click().build().perform();
 		//		JavaScriptOperation.scrollToElement(refreshPreview);
-		applyExplicitWaitsUntilElementClickable(refreshPreview,30).click();
+		//		applyExplicitWaitsUntilElementClickable(refreshPreview,30).click();
 		Thread.sleep(3000);
 		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
 		Thread.sleep(2000);
 		notfn =notification.getText();
+		Thread.sleep(1000);
 		System.out.println(notfn);
-		return widget;
+		return notfn;
 
 	}
 
@@ -743,18 +707,23 @@ Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(edit, 30).click(); 
-//		Thread.sleep(2000);
-		//          acn.sendKeys(Keys.PAGE_DOWN).build().perform();
-//		             acn.moveToElement(tag).click().build().perform();
-//		
-		JavaScriptOperation.scrollToElement(tag);
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(tag, 50).click();
+		//		Thread.sleep(2000);
 
-		JavaScriptOperation.scrollToElement(selPlant);
-		applyExplicitWaitsUntilElementClickable(selPlant, 50).click();    
+
+		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		acn.moveToElement(tag).click().build().perform();
+		//
+		//JavaScriptOperation.scrollToElement(tag);
+		//Thread.sleep(1000);
+		//applyExplicitWaitsUntilElementClickable(tag, 50).click();
+
+		//JavaScriptOperation.scrollToElement(selPlant);
+		applyExplicitWaitsUntilElementClickable(selPlant, 50).click();  
+		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(allPlant, 30).click();    
-		applyExplicitWaitsUntilElementClickable(selTag, 50).click();    
+
+		applyExplicitWaitsUntilElementClickable(selTag, 50).click();
+		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(qaAlertLog, 30).click();    
 		//
 		applyExplicitWaitsUntilElementClickable(enterPrefix, 30).sendKeys("11");    
@@ -793,31 +762,38 @@ Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(edit, 30).click(); 
 		Thread.sleep(2000);
 
+
 		JavaScriptOperation.scrollToElement(tableBtn);
 		applyExplicitWaitsUntilElementClickable(tableBtn,30).click();
 
 		JavaScriptOperation.scrollToElement(enterAlis);
-		applyExplicitWaitsUntilElementClickable(enterAlis,30).click();
+		acn=new Actions(ndriver);
+		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		acn.scrollToElement(enterAlis).build().perform();
+		acn.moveToElement(enterAlis).click().build().perform();
+		//		applyExplicitWaitsUntilElementClickable(enterAlis,30).click();
 		applyExplicitWaitsUntilElementClickable(enterAlis,30).sendKeys("aa");
 
-		applyExplicitWaitsUntilElementClickable(enterUnit,30).click();
+		acn.moveToElement(enterUnit).click().build().perform();
 		applyExplicitWaitsUntilElementClickable(enterUnit,30).sendKeys("kw");
-		applyExplicitWaitsUntilElementClickable(enterThreshould,30).click();
+		acn.moveToElement(enterThreshould).click().build().perform();
 		applyExplicitWaitsUntilElementClickable(enterThreshould,30).sendKeys("1000");
-		applyExplicitWaitsUntilElementClickable(enterRow,30).click();
+		acn.moveToElement(enterRow).click().build().perform();
 		applyExplicitWaitsUntilElementClickable(enterRow,30).sendKeys("3");
-		applyExplicitWaitsUntilElementClickable(enterCol,30).click();
+		acn.moveToElement(enterCol).click().build().perform();
 		applyExplicitWaitsUntilElementClickable(enterCol,30).sendKeys("2");
 
 		JavaScriptOperation.scrollToElement(tableLocatn);
 		applyExplicitWaitsUntilElementClickable(tableLocatn,30).click();
 		Thread.sleep(2000);
-		WebElement PCB6 = ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='PSB 6']"));
+		//		WebElement PCB6 = ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='PSB 6']"));
+		WebElement PCB6= ndriver.findElement(By.xpath("//div[ text()='PSB 6']"));
 		applyExplicitWaitsUntilElementClickable(PCB6,30).click();
 
 		applyExplicitWaitsUntilElementClickable(tableParameter,30).click();
 		Thread.sleep(2000);
-		WebElement KWH =ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='kWh']"));
+		//		WebElement KWH =ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='kWh']"));
+		WebElement KWH= ndriver.findElement(By.xpath("//div[ text()='kWh']"));
 		applyExplicitWaitsUntilElementClickable(KWH,30).click();
 		Thread.sleep(2000);
 
@@ -829,12 +805,13 @@ Thread.sleep(1000);
 		Thread.sleep(2000);
 
 		notfn =notification.getText();
+		Thread.sleep(1000);
 		System.out.println(notfn);
 		return notfn;
 
 	}
-	
-	
+
+
 
 	public String deleteCreatedDashboard() throws Exception
 	{
@@ -847,7 +824,7 @@ Thread.sleep(1000);
 		catch(Exception e) {
 			js.click(deleteMenu);
 		}
-//		applyExplicitWaitsUntilElementClickable(deleteMenu,30).click(); 
+		//		applyExplicitWaitsUntilElementClickable(deleteMenu,30).click(); 
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(okBtn, 30).click();
 		Thread.sleep(1000);

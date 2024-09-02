@@ -45,32 +45,32 @@ public class AddDifferentWidgetsSteps {
 
 	@When("User Add widget as {string} and add below parameters")
 	public void user_add_widget_as_and_add_below_parameters(String widgetTable, io.cucumber.datatable.DataTable dataTable) throws Exception {
-//		widgets.addTable(widgetTable);
-//		widgets.selectParametersforTableWidget(dataTable);
-//
+		widgets.addTable(widgetTable);
+		widgets.selectParametersforTableWidget(dataTable);
+		
 	}
-//
+	//
 	@When("add below sensors then Verify after refresh preview widget is should be dispayed compulsory")
 	public void add_below_sensors_then_verify_after_refresh_preview_widget_is_should_be_dispayed_compulsory(io.cucumber.datatable.DataTable dataTable) throws Exception {
-
-//		widgets.selectSensorsforTableWidget(dataTable);
-//		String noticicatn=widgets.clickOnRefreshAndAddWidget();
-//		Assert.assertEquals(noticicatn, "Widget Added");
+		//
+		widgets.selectSensorsforTableWidget(dataTable);
+		String noticicatn=widgets.clickOnRefreshAndAddWidget();
+		Assert.assertEquals(noticicatn, "Widget Added");
 	}
 
 
 
 	@When("User edit that dispayed table widget it gets edited and able to save changes in {string} widget")
 	public void user_edit_that_dispayed_table_widget_it_gets_edited_and_able_to_save_changes_in_widget(String widgetName) throws Exception {
-//		String updateTableWidget=widgets.editTableWidget(widgetName);
-//		Assert.assertEquals(updateTableWidget, "Widget Updated");
+		String updateTableWidget=widgets.editTableWidget(widgetName);
+		Assert.assertEquals(updateTableWidget, "Widget Updated");
 	}
-	
+
 	@Then("Affter that delete created dashboard and user will get messg as {string}")
 	public void affter_that_delete_created_dashboard_and_user_will_get_messg_as(String deleteMessg) throws Exception {
-		 String deleteNotfn = widgets.deleteCreatedDashboard();
-	        boolean isPresent = deleteNotfn.contains(deleteMessg);
-			Assert.assertTrue(isPresent);
+		String deleteNotfn = widgets.deleteCreatedDashboard();
+		boolean isPresent = deleteNotfn.contains(deleteMessg);
+		Assert.assertTrue(isPresent);
 	}
 
 
