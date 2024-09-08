@@ -1,9 +1,11 @@
 package stepdefinations;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import drivers.DriverFactory;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import pageclases.AddWidgetsOfServiceTemplates;
 
 public class AddWidgetsOfServiceTemplatesSteps {
@@ -19,8 +21,28 @@ public class AddWidgetsOfServiceTemplatesSteps {
 	
 	@Given("Click on checkBox and template whose name as {string}")
 	public void click_on_check_box_and_template_whose_name_as(String templateName) throws Exception {
-	    temp.clickOnCheckBoxAndTemplateName(templateName);
+	 boolean tempDisplay=temp.clickOnCheckBoxAndTemplateName(templateName);
+	 Assert.assertTrue(tempDisplay);
+	    
 	}
+	
+	@When("User click on options user will able to add widget as {string} and verify widget added successfully")
+	public void user_click_on_options_user_will_able_to_add_widget_as_and_verify_widget_added_successfully(String widgetName) throws Exception {
+	
+	String addNotification =temp.addWidgetOfTemplateService(widgetName);
+	Assert.assertEquals(addNotification, "Widget Added");
+	
+	}
+	
+	@When("User edit the dashboard user will clone and delete cloned widget successfully")
+	public void user_edit_the_dashboard_user_will_clone_and_delete_cloned_widget_successfully() throws Exception {
+ 
+		temp.EditDashbordThenCloneAndDeleteClonedWidget();
+	}
+
+
+
+
 
 
 
