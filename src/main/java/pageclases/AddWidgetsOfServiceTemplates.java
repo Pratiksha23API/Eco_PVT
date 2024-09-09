@@ -4,10 +4,14 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.eco.base.BaseClass;
@@ -19,7 +23,8 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	WebDriver ndriver;
 	WebDriverWait wait;
 	JavaScriptOperation js;
-
+	Actions acn;
+	JavascriptExecutor	jse;
 	public AddWidgetsOfServiceTemplates(WebDriver odriver) {
 		this.ndriver = odriver;
 		PageFactory.initElements(ndriver, this);
@@ -88,7 +93,7 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		private WebElement entrWidgetName;
 		
 		
-		@FindBy(xpath="//label[normalize-space()='Widget Description']")
+		@FindBy(xpath="//textarea[@name='widget_description']")
 		private WebElement widgetDescrptn;
 		
 		@FindBy(xpath="//button[normalize-space()='Normal']")
@@ -117,15 +122,63 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		
 		@FindBy(xpath="//span[@class='mainMsg']")
 		private WebElement  notification;
-//		@FindBy(xpath="")
-//		private WebElement ;
-//		
-//		@FindBy(xpath="")
-//		private WebElement ;
-//		
-//		@FindBy(xpath="")
-//		private WebElement ;
 		
+		@FindBy(xpath="//a[@class='trigger level-0']")
+		private WebElement oVIcon;
+		
+		@FindBy(xpath="//div[text()='Action']")
+		private WebElement oActn ;
+		
+		@FindBy(xpath="//a[text()='Clone']")
+		private WebElement copy;
+
+		@FindBy(xpath="(//a[@class='trigger level-0'])[2]")
+		private WebElement copiedIcon;
+		
+		@FindBy(xpath="(//div[text()='Action'])[2]")
+		private WebElement clonActn;
+		
+		@FindBy(xpath="(//a[text()='Delete' and @class='dropdown-item'])[2]")
+		private WebElement del;
+
+		@FindBy(xpath="//button[normalize-space()='Ok']")
+		private WebElement okBtn;
+		
+		@FindBy(xpath="//button[normalize-space()='+ Add New Widget']")
+		private WebElement addNewWidget ;
+		
+		@FindBy(xpath="//div[text()='Workplace Overview']")
+		private WebElement workplaceOverviewWidget;
+		
+		@FindBy(xpath="(//input[@class='form-control-sm form-control'])[1]")
+		private WebElement occupancyfield;
+		
+		@FindBy(xpath="(//input[@class='form-control-sm form-control'])[2]")
+		private WebElement occupantsfield;
+		
+		@FindBy(xpath="(//input[@class='form-control-sm form-control'])[3]")
+		private WebElement aliseField;
+		
+		@FindBy(xpath="(//input[@class='form-control-sm form-control'])[4]")
+		private WebElement prefixfield ;
+		
+		@FindBy(xpath="(//input[@class='form-control-sm form-control'])[5]")
+		private WebElement suffixfield;
+		
+		@FindBy(xpath="//select[contains(@placeholder,'Select Scope')]")
+		private WebElement scope;
+		
+		@FindBy(xpath="//span[@class='checkmark']")
+		private WebElement highlightedCheckmark;
+		
+//		@FindBy(xpath="")
+//		private WebElement ;
+//		
+//		@FindBy(xpath="")
+//		private WebElement ;
+//		
+//		@FindBy(xpath="")
+//		private WebElement ;
 
 
 	public void createServiceTemplates(String serviceTemplateName) throws Exception
@@ -174,33 +227,146 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	
 	public String addWidgetOfTemplateService(String widgetName) throws Exception
 	{
-		applyExplicitWaitsUntilElementClickable(options,30).click();
-		applyExplicitWaitsUntilElementClickable(addNewWidgetMenu,30).click();
-		applyExplicitWaitsUntilElementClickable(workplaceGraphWidget,30).click();
-		applyExplicitWaitsUntilElementClickable(addButton,30).click();
-		
-		applyExplicitWaitsUntilElementClickable(entrWidgetName,30).click();
-		applyExplicitWaitsUntilElementClickable(entrWidgetName,30).sendKeys(widgetName);
-		applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).click();
-		applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
-		
-		applyExplicitWaitsUntilElementClickable(normalBtn,30).click();
-		applyExplicitWaitsUntilElementClickable(enterAlisName,30).click();
-		applyExplicitWaitsUntilElementClickable(enterAlisName,30).sendKeys("asf");
-		
-		applyExplicitWaitsUntilElementClickable(loctn,30).click();
-		applyExplicitWaitsUntilElementClickable(pfBannerOptn,30).click();
-		
-		applyExplicitWaitsUntilElementClickable(parametr,30).click();
-		applyExplicitWaitsUntilElementClickable(kwhOptn,30).click();
-		
-		applyExplicitWaitsUntilElementClickable(refresh,30).click();
-		applyExplicitWaitsUntilElementClickable(addWidgetBtn,30).click();
-		
-		Thread.sleep(3000);
-		notfn =notification.getText();
-		Thread.sleep(1000);
-		System.out.println(notfn);
+		if(widgetName.equalsIgnoreCase("Workplace Graph"))
+		{
+			applyExplicitWaitsUntilElementClickable(options,30).click();
+			applyExplicitWaitsUntilElementClickable(addNewWidgetMenu,30).click();
+			applyExplicitWaitsUntilElementClickable(workplaceGraphWidget,30).click();
+			applyExplicitWaitsUntilElementClickable(addButton,30).click();
+			
+			applyExplicitWaitsUntilElementClickable(entrWidgetName,30).click();
+			applyExplicitWaitsUntilElementClickable(entrWidgetName,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).click();
+			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
+			
+			acn= new Actions(ndriver);
+//			
+			
+			jse= (JavascriptExecutor)ndriver;
+			jse.executeScript("window.scrollBy(0,2000)");
+			try {
+				applyExplicitWaitsUntilElementClickable(normalBtn,30).click();
+			}
+			catch(Exception e) {
+				js.click(normalBtn);
+			}
+			Thread.sleep(1000);
+			jse= (JavascriptExecutor)ndriver;
+			jse.executeScript("window.scrollBy(0,2000)");
+			acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+			try {
+				applyExplicitWaitsUntilElementClickable(enterAlisName,30).click();
+			}
+			catch(Exception e) {
+				js.click(enterAlisName);
+			}
+//			applyExplicitWaitsUntilElementClickable(enterAlisName,30).click();
+			applyExplicitWaitsUntilElementClickable(enterAlisName,30).sendKeys("asf");
+			
+			jse.executeScript("window.scrollBy(0,2000)");
+			acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(1000);
+			try {
+				applyExplicitWaitsUntilElementClickable(loctn,30).click();
+			}
+			catch(Exception e) {
+				js.click(loctn);
+			}
+	acn.moveToElement(loctn).click().build().perform();
+	Thread.sleep(1000);
+			applyExplicitWaitsUntilElementClickable(pfBannerOptn,80).click();
+			
+			Thread.sleep(1000);
+			try {
+				applyExplicitWaitsUntilElementClickable(parametr,30).click();
+			}
+			catch(Exception e) {
+				js.click(parametr);
+			}
+			acn.moveToElement(parametr).click().build().perform();
+			Thread.sleep(1000);
+			applyExplicitWaitsUntilElementClickable(kwhOptn,30).click();
+			
+			acn.moveToElement(refresh).build().perform();
+			applyExplicitWaitsUntilElementClickable(refresh,30).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetBtn,30).click();
+			
+			Thread.sleep(2000);
+			notfn =notification.getText();
+//			Thread.sleep(1000);
+			System.out.println(notfn);
+		}
+		else if(widgetName.equalsIgnoreCase("Workplace Overview"))
+		{
+			Thread.sleep(1000);
+			acn= new Actions(ndriver);
+			acn.sendKeys(Keys.PAGE_UP).build().perform();
+			Thread.sleep(2000);
+			acn.moveToElement(addNewWidget).click().build().perform();
+//			applyExplicitWaitsUntilElementClickable(addNewWidget,30).click();
+			applyExplicitWaitsUntilElementClickable(workplaceOverviewWidget,30).click();
+			applyExplicitWaitsUntilElementClickable(addButton,30).click();
+
+			applyExplicitWaitsUntilElementClickable(entrWidgetName,30).click();
+			applyExplicitWaitsUntilElementClickable(entrWidgetName,30).sendKeys(widgetName);
+			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).click();
+			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
+			Thread.sleep(1000);
+			
+//			jse= (JavascriptExecutor)ndriver;
+//			jse.executeScript("window.scrollBy(0,2000)");
+			acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(1000);
+			acn.moveToElement(occupancyfield).click().sendKeys("20").build().perform();
+//			applyExplicitWaitsUntilElementClickable(occupancyfield,30).click();
+//			applyExplicitWaitsUntilElementClickable(occupancyfield,30).sendKeys("20");
+			applyExplicitWaitsUntilElementClickable(occupantsfield,30).click();
+			applyExplicitWaitsUntilElementClickable(occupantsfield,30).sendKeys("40");
+			
+			applyExplicitWaitsUntilElementClickable(highlightedCheckmark,30).click();
+			
+			Select sel = new Select(scope);
+			sel.selectByVisibleText("Outer Air Condition");
+			Thread.sleep(1000);
+			
+			acn= new Actions(ndriver);
+			acn.moveToElement(aliseField).click().sendKeys("alias1").build().perform();
+			acn.moveToElement(prefixfield).click().sendKeys("aa").build().perform();
+			acn.moveToElement(suffixfield).click().sendKeys("ss").build().perform();
+			
+			Thread.sleep(1000);
+			try {
+				applyExplicitWaitsUntilElementClickable(loctn,30).click();
+			}
+			catch(Exception e) {
+				js.click(loctn);
+			}
+	acn.moveToElement(loctn).click().sendKeys("pf").build().perform();
+	Thread.sleep(2000);
+			applyExplicitWaitsUntilElementClickable(pfBannerOptn,80).click();
+			
+			Thread.sleep(1000);
+			try {
+				applyExplicitWaitsUntilElementClickable(parametr,30).click();
+			}
+			catch(Exception e) {
+				js.click(parametr);
+			}
+			acn.moveToElement(parametr).click().sendKeys("2001").build().perform();
+		    Thread.sleep(1000);
+			applyExplicitWaitsUntilElementClickable(kwhOptn,30).click();
+			
+			acn.moveToElement(refresh).build().perform();
+			applyExplicitWaitsUntilElementClickable(refresh,30).click();
+			applyExplicitWaitsUntilElementClickable(addWidgetBtn,30).click();
+			
+			Thread.sleep(2000);
+			notfn =notification.getText();
+//			Thread.sleep(1000);
+			System.out.println(notfn);
+			
+			
+		}
 		
         return notfn;
 		
@@ -208,19 +374,44 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	
 	public void EditDashbordThenCloneAndDeleteClonedWidget() throws Exception
 	{
+		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(options,30).click();
 		applyExplicitWaitsUntilElementClickable(editDashbordMenu,30).click();
+		jse= (JavascriptExecutor)ndriver;
+		jse.executeScript("window.scrollBy(0,4000)");
 		
-		ndriver.findElement(By.xpath("//a[@class='trigger level-0']")).click();  //vicon of ori
-		ndriver.findElement(By.xpath("//div[text()='Action']")).click();
-		ndriver.findElement(By.xpath("//a[text()='Clone']")).click();
+
+		Thread.sleep(1000);
+//	WebElement oVIcon=	ndriver.findElement(By.xpath("//a[@class='trigger level-0']")); //vicon of ori
+	acn= new Actions(ndriver);
+	acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+	Thread.sleep(1000);
+	acn.moveToElement(oVIcon).click().build().perform();
+	Thread.sleep(2000);
+//	WebElement Oactn=	ndriver.findElement(By.xpath("//div[text()='Action']"));
+	acn.moveToElement(oActn).build().perform();
+	Thread.sleep(2000);
+//	WebElement copy=	ndriver.findElement(By.xpath("//a[text()='Clone']"));
+	acn.moveToElement(copy).click().build().perform();
+	Thread.sleep(2000);
 		String clonenotfn =notification.getText();
 		System.out.println(clonenotfn);
 		
-		ndriver.findElement(By.xpath("(//a[@class='trigger level-0'])[2]")).click();  //vicon of copy
-		ndriver.findElement(By.xpath("(//div[text()='Action'])[2]")).click();
-		ndriver.findElement(By.xpath("(//a[text()='Delete' and @class='dropdown-item'])[2]")).click();
-		ndriver.findElement(By.xpath("//button[normalize-space()='Ok']")).click();
+		acn.sendKeys(Keys.PAGE_DOWN).build().perform();	
+		Thread.sleep(2000);
+//	WebElement copiedIcon=	ndriver.findElement(By.xpath("(//a[@class='trigger level-0'])[2]"));  //vicon of copy
+	acn.moveToElement(copiedIcon).click().build().perform();
+	Thread.sleep(1000);
+	
+
+//	WebElement clonActn=	ndriver.findElement(By.xpath("(//div[text()='Action'])[2]"));
+	acn.moveToElement(clonActn).build().perform();
+	Thread.sleep(2000);
+	
+//	WebElement del=	ndriver.findElement(By.xpath("(//a[text()='Delete' and @class='dropdown-item'])[2]"));
+	acn.moveToElement(del).click().build().perform();
+	applyExplicitWaitsUntilElementClickable(okBtn,30).click();
+		Thread.sleep(2000);
 		String deleteNotfn= notification.getText();
 		System.out.println(deleteNotfn);
 		

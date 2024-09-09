@@ -14,4 +14,4 @@ Feature: create Service templates and Add widget
  And Click on checkBox and template whose name as "QADEMO"
  When User click on options user will able to add widget as "Workplace Graph" and verify widget added successfully
  When User edit the dashboard user will clone and delete cloned widget successfully
- 
+ When User add new widget as "Workplace Overview" then verify widget added successfully
