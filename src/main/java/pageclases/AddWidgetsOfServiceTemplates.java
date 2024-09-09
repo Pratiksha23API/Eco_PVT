@@ -171,8 +171,11 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		@FindBy(xpath="//span[@class='checkmark']")
 		private WebElement highlightedCheckmark;
 		
-//		@FindBy(xpath="")
-//		private WebElement ;
+		@FindBy(xpath="//div[@class='dropdown-menu level-1 _show']/a[text()='Clone']")
+		private WebElement clone ;
+		
+        @FindBy(xpath="//div[@class='dropdown-menu level-1 _show']//a[text()='Delete']")
+		private WebElement  delete;
 //		
 //		@FindBy(xpath="")
 //		private WebElement ;
@@ -180,7 +183,8 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 //		@FindBy(xpath="")
 //		private WebElement ;
 
-
+		public static String widget ="";
+		
 	public void createServiceTemplates(String serviceTemplateName) throws Exception
 	{
 	TemplateName=serviceTemplateName;
@@ -372,7 +376,7 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		
 	}
 	
-	public void EditDashbordThenCloneAndDeleteClonedWidget() throws Exception
+	public void EditDashbordThenCloneAndDeleteClonedWorkplaceGraphWidget() throws Exception
 	{
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(options,30).click();
@@ -418,6 +422,54 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	}
 	
 	
+	public String copyAndDeleteCopiedWidget(String widgetName) throws Exception
+	{
+		acn=new Actions(ndriver);
+		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		
+		jse= (JavascriptExecutor)ndriver;
+		jse.executeScript("window.scrollBy(0,4000)");
+		
+		widget=widgetName;		
+		//generic copy and delete code
+		
+		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
+		Thread.sleep(1000);
+		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
+		acn.moveToElement(addedwidgetIcon).click().build().perform();
+		Thread.sleep(2000);
+//		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
+		
+		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
+		Thread.sleep(1000);
+		acn.moveToElement(Oriactn).build().perform();
+//		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(clone,30).click();
+		Thread.sleep(2000);
+		
+		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
+		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
+		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
+		
+		WebElement actn = ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
+		acn.moveToElement(actn).build().perform();
+//		applyExplicitWaitsUntilElementClickable(actn,30).click();
+		Thread.sleep(2000);
+		applyExplicitWaitsUntilElementClickable(delete,30).click();
+		Thread.sleep(1000);
+		applyExplicitWaitsUntilElementClickable(okBtn, 30).click(); 
+		Thread.sleep(2000);
+		
+		notfn =notification.getText();
+		System.out.println(notfn);
+
+		return notfn;
+		
+		
+		
+	}
 	
 	
 

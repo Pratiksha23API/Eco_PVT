@@ -38,7 +38,7 @@ public class AddWidgetsOfServiceTemplatesSteps {
 	@When("User edit the dashboard user will clone and delete cloned widget successfully")
 	public void user_edit_the_dashboard_user_will_clone_and_delete_cloned_widget_successfully() throws Exception {
 
-		temp.EditDashbordThenCloneAndDeleteClonedWidget();
+		temp.EditDashbordThenCloneAndDeleteClonedWorkplaceGraphWidget();
 	}
 	
 	//for Workplace Overview widget	
@@ -47,6 +47,15 @@ public class AddWidgetsOfServiceTemplatesSteps {
 		String addNotification =temp.addWidgetOfTemplateService(widgetName);
 		Assert.assertEquals(addNotification, "Widget Added");
 	}
+	
+//generic copy
+	@When("Clone dispayed {string} widget it gets clone and after delete that cloned widget it gets delete")
+	public void clone_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_it_gets_delete(String widgetName) throws Exception {
+		String deleteNotification =temp.copyAndDeleteCopiedWidget(widgetName);
+		Assert.assertEquals(deleteNotification, "Widget Deleted");
+	
+	}
+
 
 
 
