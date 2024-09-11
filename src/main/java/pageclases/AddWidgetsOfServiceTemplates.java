@@ -85,7 +85,6 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	@FindBy(xpath="//div[text()='Workplace Graph']")
 	private WebElement workplaceGraphWidget;
 
-
 	@FindBy(xpath="//button[normalize-space()='Add']")
 	private WebElement addButton;
 
@@ -202,14 +201,10 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 
 	@FindBy(xpath="(//input[@class='form-control-sm form-control'])[2]")
 	private WebElement aliseForparaTrack;
+
 	@FindBy(xpath="(//input[@class='form-control-sm form-control'])[3]")
 	private WebElement threshouldForParaTrack;
 
-	//		@FindBy(xpath="")
-	//		private WebElement ;
-	//		@FindBy(xpath="")
-	//		private WebElement ;
-	//		
 
 	public static String widget ="";
 
@@ -242,6 +237,7 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		applyExplicitWaitsUntilElementClickable(continueBtn,30).click();
 
 	}
+
 	boolean s;
 	public boolean clickOnCheckBoxAndTemplateName(String displayedTemplateName) throws Exception
 	{
@@ -251,9 +247,9 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		Thread.sleep(2000);
 		WebElement template =ndriver.findElement(By.xpath("(//div[text()='"+TemplateName+"'])[1]"));
 		boolean display=isWebElementDisplayed(template);
-
-		template.click();
-		return display;
+        template.click();
+		
+        return display;
 
 	}
 
@@ -272,7 +268,6 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
 
 			acn= new Actions(ndriver);
-			//			
 
 			jse= (JavascriptExecutor)ndriver;
 			jse.executeScript("window.scrollBy(0,2000)");
@@ -292,7 +287,6 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			catch(Exception e) {
 				js.click(enterAlisName);
 			}
-			//			applyExplicitWaitsUntilElementClickable(enterAlisName,30).click();
 			applyExplicitWaitsUntilElementClickable(enterAlisName,30).sendKeys("asf");
 
 			jse.executeScript("window.scrollBy(0,2000)");
@@ -335,7 +329,6 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			acn.sendKeys(Keys.PAGE_UP).build().perform();
 			Thread.sleep(2000);
 			acn.moveToElement(addNewWidget).click().build().perform();
-			//			applyExplicitWaitsUntilElementClickable(addNewWidget,30).click();
 			applyExplicitWaitsUntilElementClickable(workplaceOverviewWidget,30).click();
 			applyExplicitWaitsUntilElementClickable(addButton,30).click();
 
@@ -345,13 +338,9 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
 			Thread.sleep(1000);
 
-			//			jse= (JavascriptExecutor)ndriver;
-			//			jse.executeScript("window.scrollBy(0,2000)");
 			acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 			Thread.sleep(1000);
 			acn.moveToElement(occupancyfield).click().sendKeys("20").build().perform();
-			//			applyExplicitWaitsUntilElementClickable(occupancyfield,30).click();
-			//			applyExplicitWaitsUntilElementClickable(occupancyfield,30).sendKeys("20");
 			applyExplicitWaitsUntilElementClickable(occupantsfield,30).click();
 			applyExplicitWaitsUntilElementClickable(occupantsfield,30).sendKeys("40");
 
@@ -473,9 +462,6 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			applyExplicitWaitsUntilElementClickable(widgetDescrptn,30).sendKeys(widgetName);
 			Thread.sleep(2000);
 
-			//						jse= (JavascriptExecutor)ndriver;
-			//						jse.executeScript("window.scrollBy(0,2000)");
-			//						Thread.sleep(1000);
 			try {
 				applyExplicitWaitsUntilElementClickable(cardName,30).click();
 			}
@@ -483,10 +469,8 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 				js.click(cardName);
 			}
 
-			//			
 			Thread.sleep(2000);
 			applyExplicitWaitsUntilElementClickable(cardName,30).sendKeys("alise1");
-			//			
 			Thread.sleep(2000);
 
 			Select sel = new Select(selectParaType);
@@ -549,16 +533,13 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 
 
 		Thread.sleep(1000);
-		//	WebElement oVIcon=	ndriver.findElement(By.xpath("//a[@class='trigger level-0']")); //vicon of ori
 		acn= new Actions(ndriver);
 		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 		Thread.sleep(1000);
 		acn.moveToElement(oVIcon).click().build().perform();
 		Thread.sleep(2000);
-		//	WebElement Oactn=	ndriver.findElement(By.xpath("//div[text()='Action']"));
 		acn.moveToElement(oActn).build().perform();
 		Thread.sleep(2000);
-		//	WebElement copy=	ndriver.findElement(By.xpath("//a[text()='Clone']"));
 		acn.moveToElement(copy).click().build().perform();
 		Thread.sleep(2000);
 		String clonenotfn =notification.getText();
@@ -566,16 +547,12 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 
 		acn.sendKeys(Keys.PAGE_DOWN).build().perform();	
 		Thread.sleep(2000);
-		//	WebElement copiedIcon=	ndriver.findElement(By.xpath("(//a[@class='trigger level-0'])[2]"));  //vicon of copy
 		acn.moveToElement(copiedIcon).click().build().perform();
 		Thread.sleep(1000);
 
-
-		//	WebElement clonActn=	ndriver.findElement(By.xpath("(//div[text()='Action'])[2]"));
 		acn.moveToElement(clonActn).build().perform();
 		Thread.sleep(2000);
 
-		//	WebElement del=	ndriver.findElement(By.xpath("(//a[text()='Delete' and @class='dropdown-item'])[2]"));
 		acn.moveToElement(del).click().build().perform();
 		applyExplicitWaitsUntilElementClickable(okBtn,30).click();
 		Thread.sleep(2000);
@@ -598,31 +575,25 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		Thread.sleep(2000);
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
 		Thread.sleep(2000);
-		//		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 		acn.moveToElement(addedwidgetIcon).click().build().perform();
 		Thread.sleep(2000);
-		//		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		Thread.sleep(1000);
 		acn.moveToElement(Oriactn).build().perform();
-		//		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(clone,30).click();
 		Thread.sleep(3000);
 		String cloneNotfn= notification.getText();
 		System.out.println(widgetName+" "+cloneNotfn);
 
-
-
-		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
+        WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
 		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
 
 		WebElement actn = ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		acn.moveToElement(actn).build().perform();
-		//		applyExplicitWaitsUntilElementClickable(actn,30).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(delete,30).click();
 		Thread.sleep(1000);
@@ -649,32 +620,25 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("(//div[@class='_Dropdown dropdown'])[4]"));
 		acn.moveToElement(addedwidgetIcon).click().build().perform();
 		Thread.sleep(2000);
-		//		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 
 		WebElement Oriactn = ndriver.findElement(By.xpath("(//div[@class='_Dropdown dropdown'])[4]//div[text()='Action']"));
 		Thread.sleep(1000);
 		acn.moveToElement(Oriactn).build().perform();
-		//		applyExplicitWaitsUntilElementClickable(Oriactn,50).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(clone,30).click();
 		Thread.sleep(2000);
 		String cloneNotfn= notification.getText();
 		System.out.println("ParameterTracking  "+cloneNotfn);
 
-
-
-		
 		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("(//div[@class='_Dropdown dropdown'])[3]"));
 		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 		Thread.sleep(2000);
 		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
 		acn.moveToElement(copiedWidgetVIcon).click().build().perform();
 		Thread.sleep(2000);
-		//		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
 
 		WebElement copyActn = ndriver.findElement(By.xpath("(//div[text()='Action'])[3]"));
 		acn.moveToElement(copyActn).build().perform();
-		//		applyExplicitWaitsUntilElementClickable(actn,30).click();
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(delete,30).click();
 		Thread.sleep(1000);
