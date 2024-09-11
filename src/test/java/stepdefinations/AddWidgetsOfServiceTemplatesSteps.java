@@ -55,6 +55,13 @@ public class AddWidgetsOfServiceTemplatesSteps {
 		Assert.assertEquals(deleteNotification, "Widget Deleted");
 	
 	}
+	
+	@When("User clone Parameter Tracking widget it gets clone and after delete that cloned widget succefully")
+	public void user_clone_parameter_tracking_widget_it_gets_clone_and_after_delete_that_cloned_widget_succefully() throws Exception {
+		String deleteNotification =temp.copyAndDeleteCopiedParameterTrackingWidget();
+		Assert.assertEquals(deleteNotification, "Widget Deleted");
+	}
+
 
 
 

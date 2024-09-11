@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-02T16:30:36 IST" name="Default suite" finished-at="2024-09-02T16:32:51 IST" duration-ms="135321">
+  <suite started-at="2024-09-11T14:35:55 IST" name="Default suite" finished-at="2024-09-11T14:39:11 IST" duration-ms="196128">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-09-02T16:30:36 IST" name="Default test" finished-at="2024-09-02T16:32:51 IST" duration-ms="135321">
+    <test started-at="2024-09-11T14:35:55 IST" name="Default test" finished-at="2024-09-11T14:39:11 IST" duration-ms="196128">
       <class name="testrunner.SmartSenseRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-02T16:30:36 IST" name="setUpClass" finished-at="2024-09-02T16:30:38 IST" duration-ms="1487" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-11T14:35:55 IST" name="setUpClass" finished-at="2024-09-11T14:35:56 IST" duration-ms="1189" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6e017950]]>
+                <![CDATA[org.testng.TestRunner@3f31892e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-02T16:30:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-02T16:30:48 IST" duration-ms="10210" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-11T14:35:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-11T14:36:05 IST" duration-ms="8765" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,30 +30,30 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["create dashboard Module and Add Table widget"]]>
+                <![CDATA["Create Service templates and Add widget"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-02T16:30:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-02T16:32:49 IST" duration-ms="120878" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-11T14:36:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-09-11T14:39:08 IST" duration-ms="183061" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Create dashboard and add Add Table widget successfully"]]>
+                <![CDATA["Create Service templates and Add,Clone & Delete different cloned widgets successfully"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["create dashboard Module and Add Table widget"]]>
+                <![CDATA["Create Service templates and Add widget"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-02T16:32:49 IST" name="tearDownClass" finished-at="2024-09-02T16:32:51 IST" duration-ms="2649" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.SmartSenseRunner@65e98b1c]" started-at="2024-09-11T14:39:08 IST" name="tearDownClass" finished-at="2024-09-11T14:39:11 IST" duration-ms="3030" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
