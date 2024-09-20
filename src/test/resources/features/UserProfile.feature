@@ -2,12 +2,12 @@
   
 Feature: Test the User Profile Modeule
 
-@Sanity
+@Login
 Scenario: The user profile button is clickable
 	Given User launch the browser
 	When User opens URL "https://staging.ecolibrium.io/" 
-	And User enters Username as "qa12" 
-	And User enters Password as "qa12" 
+	And User enters Username as "Mrinal.Patil" 
+	And User enters Password as "@Eco123456" 
 	And Click on the Login 
 	Then Page Title should be "SmartSense"
 	Then User cliks on user name button 
@@ -22,17 +22,17 @@ Scenario: The user profile button is clickable
   And User verify "Number Format" bellow options should be displayed 
   |India - en-IN|
   |US/UK - en-US|
-  And User selects "US/UK - en-US" value from dropdown 
+  And User click on numberformat and selects "US/UK - en-US" value from dropdown 
   Then User clicks on Delivery Mode dropdown 
   And User verify "Delivery Mode" bellow options should be displayed 
   |SMS|
   |Whatsapp|
-  And User selects "Whatsapp" velue from dropdown
+  And User click on delivery mode and selects "Whatsapp" velue from dropdown
   Then User clicks on Dashboard Layout dropdown 
   And User verify "Dashboard Layout" bellow options should be displayed 
   |Vertical|
   |Horizontal|
-  And User selects "Vertical" velue from dropdown
+  And User click on dashboard layout and selects "Vertical" velue from dropdown
   Then User clicks on update profile details button
   And User wait for 2 seconds
   And Get user "Edited" details  
@@ -44,7 +44,7 @@ Scenario: The user profile button is clickable
   |Whatsapp|
   |Vertical|
   And User wait for 1 seconds
-  #When User click on the user profile button
+                             #When User click on the user profile button
  Then User cliks on Edit profile details button
   Then User update edited fields 
     Then User clicks on update profile details button

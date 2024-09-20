@@ -81,6 +81,27 @@ public class UserProfileSteps {
 		List actualOptions = uP.verifyNumberFormatDropdown(dropdown);
 		Assert.assertEquals(expectedOptions, actualOptions);
 	}
+	
+//missing step	//
+	//
+	@Then("User click on numberformat and selects {string} value from dropdown")
+	public void user_click_on_numberformat_and_selects_value_from_dropdown(String numFormatValue) throws Exception {
+       uP.selectValueFromNumberFormatDrpDown(numFormatValue);
+	}
+
+	@Then("User click on delivery mode and selects {string} velue from dropdown")
+	public void user_click_on_delivery_mode_and_selects_velue_from_dropdown(String deliveryModeValue) throws Exception {
+	uP.selectValueFromDeliveryModeDrpDown(deliveryModeValue);
+	
+	}
+
+	@Then("User click on dashboard layout and selects {string} velue from dropdown")
+	public void user_click_on_dashboard_layout_and_selects_velue_from_dropdown(String DashValue) {
+	uP.selectValueFromDashBoardLayoutDrpDown(DashValue);
+	}
+
+	
+	//
 
 	@Then("User clicks on Delivery Mode dropdown")
 	public void userCliksOnDeliveryModeDropdown() {

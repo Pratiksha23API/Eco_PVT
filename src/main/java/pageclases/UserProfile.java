@@ -61,13 +61,13 @@ public class UserProfile {
 	@FindBy(xpath = "//input[@name = 'phone']")
 	private WebElement enterPhone;
 
-	@FindBy(xpath = "//label[contains(text(), 'Number Format')]//following::div[contains(@class,'indicatorContainer')]")
+	@FindBy(xpath = "(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[1]")
 	private WebElement numberFormatDropdownButton;
 
-	@FindBy(xpath = "//label[contains(text(), 'Delivery Mode')]//following::div[contains(@class,'indicatorContainer')]")
+	@FindBy(xpath = "(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[2]")
 	private WebElement deliveryModeDropdownButton;
 
-	@FindBy(xpath = "//label[contains(text(), 'Dashboard Layout')]//following::div[contains(@class,'indicatorContainer')]")
+	@FindBy(xpath = "(//div[@class='css-16pqwjk-indicatorContainer selectionbox_prefix__indicator selectionbox_prefix__dropdown-indicator'])[3]")
 	private WebElement dashboardLayoutDropdownButton;
 	@FindBy(xpath = "//div[@class='save']")
 	private WebElement saveEditProfileButton;
@@ -94,7 +94,7 @@ public class UserProfile {
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(contactNumber)).getText());
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(numberFormat)).getText());
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(deliveryMode)).getText());
-		userDetails.add(wait.until(ExpectedConditions.visibilityOf(dashboardLayout)).getText());
+//		userDetails.add(wait.until(ExpectedConditions.visibilityOf(dashboardLayout)).getText());
 		return userDetails;
 
 	}
@@ -122,6 +122,8 @@ public class UserProfile {
 	public List verifyNumberFormatDropdown(String dropdown) {
 		String xpath = "//label[contains(text(), 'dropdown')]//following::div[contains(@class,'selectionbox_prefix__option')]"
 				.replace("dropdown", dropdown);
+		
+	
 
 		List<String> actual = new ArrayList<String>();
 		wait.until(ExpectedConditions.visibilityOf(ndriver.findElement(By.xpath(xpath))));
@@ -131,6 +133,27 @@ public class UserProfile {
 		}
 
 		return actual;
+	}
+	
+	public void selectValueFromNumberFormatDrpDown(String drpdownValue) throws Exception
+	{
+	wait.until(ExpectedConditions.visibilityOf(numberFormatDropdownButton)).click();
+	Thread.sleep(2000);
+	ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']")).click();
+	}
+	
+	
+	public void selectValueFromDeliveryModeDrpDown(String drpdownValue) throws Exception
+	{
+	wait.until(ExpectedConditions.visibilityOf(deliveryModeDropdownButton)).click();
+	Thread.sleep(2000);
+	ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']")).click();
+	}
+	
+	public void selectValueFromDashBoardLayoutDrpDown(String drpdownValue)
+	{
+	wait.until(ExpectedConditions.visibilityOf(dashboardLayoutDropdownButton)).click();
+	ndriver.findElement(By.xpath("//div[text()='"+drpdownValue+"']")).click();
 	}
 
 	public void userCliksOnDeliveryModeDropdown() {

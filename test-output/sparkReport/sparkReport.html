@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 11, 2024 02:35:55 pm</span></a>
+<a href="#"><span class="badge badge-primary">Sep 20, 2024 11:16:36 pm</span></a>
 </li>
 </ul>
 </div>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Create Service templates and Add widget</p>
+            <p class="name">Test Activity Module</p>
             <p class="text-sm">
-              <span>2:35:56 pm</span> / <span>00:03:11:458</span>
+              <span>11:16:38 pm</span> / <span>00:00:47:711</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Create Service templates and Add widget</h5>
-<span class='badge badge-success'>09.11.2024 2:35:56 pm</span>
-<span class='badge badge-danger'>09.11.2024 2:39:08 pm</span>
-<span class='badge badge-default'>00:03:11:458</span>
+<h5 class="test-status text-pass">Test Activity Module</h5>
+<span class='badge badge-success'>09.20.2024 11:16:38 pm</span>
+<span class='badge badge-danger'>09.20.2024 11:17:25 pm</span>
+<span class='badge badge-default'>00:00:47:711</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,7 +115,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Login to Eco app</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Validate Activity created and viewed successfully</div>
       </div>
     </div>
         <div class="collapse">
@@ -126,7 +126,7 @@
       </div>
               </div>
               <div class="step pass-bg" title="stepdefinations.SmartSenseLoginSteps.user_opens_url(java.lang.String)">
-                <span>When User opens URL "https://smartsense.ecolibrium.io/"</span>
+                <span>When User opens URL "https://staging.ecolibrium.io/"</span>
       <div>
       </div>
               </div>
@@ -150,64 +150,123 @@
       <div>
       </div>
               </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Create Service templates and Add,Clone & Delete different cloned widgets successfully</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_is_on_smartsense_page_and_add_service_templates_as(java.lang.String)">
-                <span>Given User is on Smartsense page and Add service templates as "QADEMO"</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_Click_On_Activity_Menu()">
+                <span>Then User Click On Activity Menu</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.click_on_check_box_and_template_whose_name_as(java.lang.String)">
-                <span>And Click on checkBox and template whose name as "QADEMO"</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_Click_on_Add_New_Activity_button()">
+                <span>When User Click on Add New Activity button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_click_on_options_user_will_able_to_add_widget_as_and_verify_widget_added_successfully(java.lang.String)">
-                <span>When User click on options user will able to add widget as "Workplace Graph" and verify widget added successfully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_in_Activity_Name_text_field(java.lang.String)">
+                <span>And User enter "ActivTe" in Activity Name text field</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_edit_the_dashboard_user_will_clone_and_delete_cloned_widget_successfully()">
-                <span>When User edit the dashboard user will clone and delete cloned widget successfully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Activity_Type_dropdown(java.lang.String)">
+                <span>And User select "Planned" value from Activity Type dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_add_new_widget_as_then_verify_widget_added_successfully(java.lang.String)">
-                <span>When User add new widget as "Workplace Overview" then verify widget added successfully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Sensor_Name_dropdown(java.lang.String)">
+                <span>And User select "Mrinal Sensor 21" value from Sensor Name dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.clone_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_it_gets_delete(java.lang.String)">
-                <span>When Clone dispayed "Workplace Overview" widget it gets clone and after delete that cloned widget it gets delete</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Standard_Name_dropdown(java.lang.String)">
+                <span>And User select "Default Action" value from Standard Name dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_add_new_widget_as_then_verify_widget_added_successfully(java.lang.String)">
-                <span>When User add new widget as "Weather Forecast" then verify widget added successfully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Item_Name_dropdown(java.lang.String)">
+                <span>And User select "All Assset" value from Item Name dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.clone_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_it_gets_delete(java.lang.String)">
-                <span>When Clone dispayed "Weather Forecast" widget it gets clone and after delete that cloned widget it gets delete</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.User_select_value_from_Action_Taken_dropdown(java.lang.String)">
+                <span>And User select "Default Action" value from Action Taken dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_add_new_widget_as_then_verify_widget_added_successfully(java.lang.String)">
-                <span>When User add new widget as "Parameter Tracking" then verify widget added successfully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_value_in_Description_Text_field(java.lang.String)">
+                <span>And User enter "Test Description" value in Description Text field</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.AddWidgetsOfServiceTemplatesSteps.user_clone_parameter_tracking_widget_it_gets_clone_and_after_delete_that_cloned_widget_succefully()">
-                <span>When User clone Parameter Tracking widget it gets clone and after delete that cloned widget succefully</span>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_for_Date_of_Activity_Planned(java.lang.String)">
+                <span>And User select "21" for Date of Activity Planned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_value_in_Observation_Result_Text_field(java.lang.String)">
+                <span>And User enter "Test Result" value in Observation Result Text field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_for_Date_of_Activity_Executed(java.lang.String)">
+                <span>And User select "21" for Date of Activity Executed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Create_Activity_button()">
+                <span>And click on Create Activity button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_activity_menu()">
+                <span>Then click on Activity Menu</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_logs_button()">
+                <span>And click on Logs button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_created_on_log_page()">
+                <span>Then Click on Activity created on log page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.edit_Activity_Name_with_on_log_page(java.lang.String)">
+                <span>And Edit Activity Name with "UpdateActivity" on log page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Update_Activity_on_log_page()">
+                <span>And Click on Update Activity on log page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_updated_on_log_page()">
+                <span>Then Click on Activity updated on log page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.verify_Activity_Name_updated_on_log_page(java.lang.String)">
+                <span>And Verify Activity Name "UpdateActivity" updated on log page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_Menu_Again()">
+                <span>Then click on Activity Menu Again</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Summary_button()">
+                <span>And click on Summary button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_export_button_for_download_summary()">
+                <span>Then click on export button for download summary</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.ActivitySteps.verify_downloaded_file_is_avaliable_in_project_folder_with_name(java.lang.String)">
+                <span>Then Verify  downloaded file is avaliable in project folder with "EventActivitySummaryReport.xlsx" name</span>
       <div>
       </div>
               </div>
@@ -258,11 +317,11 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:35:56 pm</td>
+<td>23:16:38 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Login to Eco app</a>
+<a href="#" class="linked" test-id='1' id='2'>Validate Activity created and viewed successfully</a>
 <div class="">
-<span class="badge badge-default">Create Service templates and Add widget.Login to Eco app</span>
+<span class="badge badge-default">Test Activity Module.Validate Activity created and viewed successfully</span>
 </div>
 </td>
 </tr>
@@ -283,13 +342,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 11, 2024 02:35:55 pm</h3>
+<h3>Sep 20, 2024 11:16:36 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 11, 2024 02:39:08 pm</h3>
+<h3>Sep 20, 2024 11:17:25 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -340,7 +399,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -360,7 +419,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>16</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>30</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -379,7 +438,7 @@
 </div></div>
 <script>
 var timeline = {
-"Create Service templates and Add widget":191.458
+"Test Activity Module":47.711
 };
 </script>
 <div class="row">
@@ -410,13 +469,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 2,
+passChild: 1,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 16,
+passGrandChild: 30,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

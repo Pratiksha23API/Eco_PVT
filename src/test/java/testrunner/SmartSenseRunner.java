@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 				
 				
 		
-		features = {"src\\test\\resources\\features\\AddWidgetsOfServiceTemplates.feature"},
+		features = {"src\\test\\resources\\features\\Activity.feature"},
 		glue= {"stepdefinations"},
 		dryRun= false,
 		monochrome=true,
