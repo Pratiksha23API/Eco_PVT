@@ -9,10 +9,13 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
 public class UserProfile {
 
@@ -72,6 +75,9 @@ public class UserProfile {
 	@FindBy(xpath = "//div[@class='save']")
 	private WebElement saveEditProfileButton;
 
+	@FindBy(xpath = "//span[@class='mainMsg']")
+	private WebElement mainMessg;
+	
 	public void clickOnMyProfileButton() {
 		wait.until(ExpectedConditions.visibilityOf(myProfile));
 		myProfile.click();
@@ -138,8 +144,10 @@ public class UserProfile {
 	public void selectValueFromNumberFormatDrpDown(String drpdownValue) throws Exception
 	{
 	wait.until(ExpectedConditions.visibilityOf(numberFormatDropdownButton)).click();
-	Thread.sleep(2000);
-	ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']")).click();
+//	Thread.sleep(2000);
+	WebElement usUk =ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']"));
+	Actions acn = new Actions(ndriver);
+	acn.moveToElement(usUk).click().build().perform();
 	}
 	
 	
@@ -170,8 +178,18 @@ public class UserProfile {
 		wait.until(ExpectedConditions.visibilityOf(ndriver.findElement(By.xpath(xpath)))).click();
 	}
 
-	public void userClicksOnUpdateProfileDetailsButton() {
+	public void userClicksOnUpdateProfileDetailsButton() throws Exception {
 
 		wait.until(ExpectedConditions.elementToBeClickable(saveEditProfileButton)).click();
+		Thread.sleep(2000);
+	}
+String notfn;	
+	public String getNotification() throws Exception
+	{
+		 notfn  = mainMessg.getText();
+   Thread.sleep(1000);
+   System.out.println("user got notification -> "+notfn);
+   return notfn;
+     
 	}
 }

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 20, 2024 11:16:36 pm</span></a>
+<a href="#"><span class="badge badge-primary">Sep 21, 2024 03:00:31 pm</span></a>
 </li>
 </ul>
 </div>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Test Activity Module</p>
+            <p class="name">Test the User Profile Modeule</p>
             <p class="text-sm">
-              <span>11:16:38 pm</span> / <span>00:00:47:711</span>
+              <span>3:00:33 pm</span> / <span>00:00:51:894</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Test Activity Module</h5>
-<span class='badge badge-success'>09.20.2024 11:16:38 pm</span>
-<span class='badge badge-danger'>09.20.2024 11:17:25 pm</span>
-<span class='badge badge-default'>00:00:47:711</span>
+<h5 class="test-status text-pass">Test the User Profile Modeule</h5>
+<span class='badge badge-success'>09.21.2024 3:00:33 pm</span>
+<span class='badge badge-danger'>09.21.2024 3:01:25 pm</span>
+<span class='badge badge-default'>00:00:51:894</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,7 +115,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Validate Activity created and viewed successfully</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Edit and Update the user profile</div>
       </div>
     </div>
         <div class="collapse">
@@ -150,123 +150,136 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_Click_On_Activity_Menu()">
-                <span>Then User Click On Activity Menu</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_cliks_on_user_name_button()">
+                <span>Then User cliks on user name button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_Click_on_Add_New_Activity_button()">
-                <span>When User Click on Add New Activity button</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_wait_for_seconds(java.lang.Integer)">
+                <span>And User wait for 1 seconds</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_in_Activity_Name_text_field(java.lang.String)">
-                <span>And User enter "ActivTe" in Activity Name text field</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_click_on_the_user_profile_button()">
+                <span>When User click on the user profile button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Activity_Type_dropdown(java.lang.String)">
-                <span>And User select "Planned" value from Activity Type dropdown</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.Get_user_details(java.lang.String)">
+                <span>And Get user "Unedited" details</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Sensor_Name_dropdown(java.lang.String)">
-                <span>And User select "Mrinal Sensor 21" value from Sensor Name dropdown</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.User_cliks_on_Edit_profile_details_button()">
+                <span>Then User cliks on Edit profile details button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Standard_Name_dropdown(java.lang.String)">
-                <span>And User select "Default Action" value from Standard Name dropdown</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.UserEntersUserName(java.lang.String)">
+                <span>And User Update Name As "New Test"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_value_from_Item_Name_dropdown(java.lang.String)">
-                <span>And User select "All Assset" value from Item Name dropdown</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.UserEntersUserContactNumber(java.lang.String)">
+                <span>And User Update Contact Number As "9876543210"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.User_select_value_from_Action_Taken_dropdown(java.lang.String)">
-                <span>And User select "Default Action" value from Action Taken dropdown</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.userCliksOnNumbaerFormatDropdown()">
+                <span>Then User clicks on Number Format dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_value_in_Description_Text_field(java.lang.String)">
-                <span>And User enter "Test Description" value in Description Text field</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.numberFormatDropdownShouldBeDisplayedWithBelowOptions(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>And User verify "Number Format" bellow options should be displayed</span>
+      <div><table class='markup-table table '><tr><td>India - en-IN</td></tr><tr><td>US/UK - en-US</td></tr></table>
+      </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_for_Date_of_Activity_Planned(java.lang.String)">
-                <span>And User select "21" for Date of Activity Planned</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.userCliksOnDeliveryModeDropdown()">
+                <span>Then User clicks on Delivery Mode dropdown</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_enter_value_in_Observation_Result_Text_field(java.lang.String)">
-                <span>And User enter "Test Result" value in Observation Result Text field</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.numberFormatDropdownShouldBeDisplayedWithBelowOptions(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>And User verify "Delivery Mode" bellow options should be displayed</span>
+      <div><table class='markup-table table '><tr><td>SMS</td></tr><tr><td>Whatsapp</td></tr></table>
+      </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.user_select_for_Date_of_Activity_Executed(java.lang.String)">
-                <span>And User select "21" for Date of Activity Executed</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.userClicksOnUpdateProfileDetailsButton()">
+                <span>Then User clicks on update profile details button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Create_Activity_button()">
-                <span>And click on Create Activity button</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_wait_for_seconds(java.lang.Integer)">
+                <span>And User wait for 2 seconds</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_activity_menu()">
-                <span>Then click on Activity Menu</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.Get_user_details(java.lang.String)">
+                <span>And Get user "Edited" details</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_logs_button()">
-                <span>And click on Logs button</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.userVerifyEditedDetials(io.cucumber.datatable.DataTable)">
+                <span>And User verify Edited details should be displayed as bellow</span>
+      <div><table class='markup-table table '><tr><td>New Test</td></tr><tr><td>mrinal.patil@ecolibrium.io</td></tr><tr><td>9876543210</td></tr><tr><td>US/UK - en-US</td></tr><tr><td>Whatsapp</td></tr></table>
+      </div>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_created_on_log_page()">
-                <span>Then Click on Activity created on log page</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_wait_for_seconds(java.lang.Integer)">
+                <span>And User wait for 1 seconds</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.edit_Activity_Name_with_on_log_page(java.lang.String)">
-                <span>And Edit Activity Name with "UpdateActivity" on log page</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.User_cliks_on_Edit_profile_details_button()">
+                <span>Then User cliks on Edit profile details button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Update_Activity_on_log_page()">
-                <span>And Click on Update Activity on log page</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_try_to_edit_name_as_without_space_then_verify_user_should_get_notification_as(java.lang.String,java.lang.String)">
+                <span>When User try  to edit name as "test" without space Then verify user should get notification as "Name should have one space"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_updated_on_log_page()">
-                <span>Then Click on Activity updated on log page</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_enter_name_as_per_requirement_i_e_with_one_space_as_it_update_successfully(java.lang.String)">
+                <span>When user enter name as per requirement i.e with one space as "QA 12" it update successfully</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.verify_Activity_Name_updated_on_log_page(java.lang.String)">
-                <span>And Verify Activity Name "UpdateActivity" updated on log page</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.User_cliks_on_Edit_profile_details_button()">
+                <span>Then User cliks on Edit profile details button</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Activity_Menu_Again()">
-                <span>Then click on Activity Menu Again</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_try_to_edit_contat_number_with_less_than_digit_as_then_verify_user_should_get_notification_as(java.lang.Integer,java.lang.String,java.lang.String)">
+                <span>When user try to edit contatNumber with less than 10 digit as "9456734" Then verify user should get notification as "Phone number should be 10 digit"</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_Summary_button()">
-                <span>And click on Summary button</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_enter_contact_number_as_per_requirement_i_e_with_ten_digit_as_it_update_successfully(java.lang.String)">
+                <span>When user enter contactNumber as per requirement i.e with ten digit  as "9922341615" it update successfully</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.click_on_export_button_for_download_summary()">
-                <span>Then click on export button for download summary</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.user_wait_for_seconds(java.lang.Integer)">
+                <span>And User wait for 2 seconds</span>
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepdefinations.ActivitySteps.verify_downloaded_file_is_avaliable_in_project_folder_with_name(java.lang.String)">
-                <span>Then Verify  downloaded file is avaliable in project folder with "EventActivitySummaryReport.xlsx" name</span>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.Get_user_details(java.lang.String)">
+                <span>And Get user "Edited" details</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinations.UserProfileSteps.userVerifyEditedDetials(io.cucumber.datatable.DataTable)">
+                <span>And User verify Edited details should be displayed as bellow</span>
+      <div><table class='markup-table table '><tr><td>QA 12</td></tr><tr><td>mrinal.patil@ecolibrium.io</td></tr><tr><td>9922341615</td></tr><tr><td>US/UK - en-US</td></tr><tr><td>Whatsapp</td></tr></table>
+      </div>
       <div>
       </div>
               </div>
@@ -317,11 +330,11 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>23:16:38 pm</td>
+<td>15:00:33 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Validate Activity created and viewed successfully</a>
+<a href="#" class="linked" test-id='1' id='2'>Edit and Update the user profile</a>
 <div class="">
-<span class="badge badge-default">Test Activity Module.Validate Activity created and viewed successfully</span>
+<span class="badge badge-default">Test the User Profile Modeule.Edit and Update the user profile</span>
 </div>
 </td>
 </tr>
@@ -342,13 +355,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 20, 2024 11:16:36 pm</h3>
+<h3>Sep 21, 2024 03:00:31 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 20, 2024 11:17:25 pm</h3>
+<h3>Sep 21, 2024 03:01:25 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -419,7 +432,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>30</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>31</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -438,7 +451,7 @@
 </div></div>
 <script>
 var timeline = {
-"Test Activity Module":47.711
+"Test the User Profile Modeule":51.894
 };
 </script>
 <div class="row">
@@ -475,7 +488,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 30,
+passGrandChild: 31,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

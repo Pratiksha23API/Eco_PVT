@@ -119,7 +119,7 @@ public class UserProfileSteps {
 	}
 
 	@Then("User clicks on update profile details button")
-	public void userClicksOnUpdateProfileDetailsButton() {
+	public void userClicksOnUpdateProfileDetailsButton() throws Exception {
 		uP.userClicksOnUpdateProfileDetailsButton();
 	}
 
@@ -140,5 +140,34 @@ public class UserProfileSteps {
 		uP.userCliksOnDashboardLayoutDropdown();
 		uP.userSelectsVelueFromDropdown(details.get(5));
 	}
+	
+	@When("User try  to edit name as {string} without space Then verify user should get notification as {string}")
+	public void user_try_to_edit_name_as_without_space_then_verify_user_should_get_notification_as(String name, String notification) throws Exception {
+		uP.UserEntersUserName(name);
+		uP.userClicksOnUpdateProfileDetailsButton();
+		String messg =uP.getNotification();
+		Assert.assertEquals(messg, notification);
+	}
+	
+	@When("user enter name as per requirement i.e with one space as {string} it update successfully")
+	public void user_enter_name_as_per_requirement_i_e_with_one_space_as_it_update_successfully(String name) throws Exception {
+		uP.UserEntersUserName(name);
+		uP.userClicksOnUpdateProfileDetailsButton();
+	}
+	
+	@When("user try to edit contatNumber with less than {int} digit as {string} Then verify user should get notification as {string}")
+	public void user_try_to_edit_contat_number_with_less_than_digit_as_then_verify_user_should_get_notification_as(Integer digit, String number, String notification) throws Exception {
+		uP.UserEntersUserContactNumber(number);	
+		uP.userClicksOnUpdateProfileDetailsButton();
+		String messg =uP.getNotification();
+		Assert.assertEquals(messg, notification);	
+	}
+	
+	@When("user enter contactNumber as per requirement i.e with ten digit  as {string} it update successfully")
+	public void user_enter_contact_number_as_per_requirement_i_e_with_ten_digit_as_it_update_successfully(String contactNum) throws Exception {
+		uP.UserEntersUserContactNumber(contactNum);	
+		uP.userClicksOnUpdateProfileDetailsButton();
+	}
+
 
 }
