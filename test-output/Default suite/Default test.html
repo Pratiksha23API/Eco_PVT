@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>10/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 25 18:14:13 IST 2024</td>
+<td>Started on:</td><td>Wed Sep 25 23:45:26 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>402 seconds (402769 ms)</td>
+<tr><td>Total time:</td><td>325 seconds (325475 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -77,14 +77,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create Service templates and Add,Clone & Delete different cloned widgets successfully", "Create Service templates and Add widget"</td>
-<td><div><pre>org.openqa.selenium.JavascriptException: javascript error: {&quot;status&quot;:60,&quot;value&quot;:&quot;[object HTMLDivElement] has no size and location&quot;}
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;QADemo&apos;]/ancestor::div[@class=&apos;rt-tr -odd&apos; or  @class=&apos;rt-tr -even&apos;]//span[@class=&apos;checkmark&apos;]&quot;}
   (Session info: chrome=129.0.6668.59)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d83662343b617fe3cfe67ef1a7e25f15, actions {actions=[org.openqa.selenium.interactions.Sequence@1d0695da]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.59, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58854}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58854/devtoo..., se:cdpVersion: 129.0.6668.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d83662343b617fe3cfe67ef1a7e25f15
+Command: [17239bc48aac6f7b2c9b56b83eef67d1, findElement {using=xpath, value=//div[text()=&apos;QADemo&apos;]/ancestor::div[@class=&apos;rt-tr -odd&apos; or  @class=&apos;rt-tr -even&apos;]//span[@class=&apos;checkmark&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.59, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51159}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51159/devtoo..., se:cdpVersion: 129.0.6668.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 17239bc48aac6f7b2c9b56b83eef67d1
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -95,20 +96,23 @@ Session ID: d83662343b617fe3cfe67ef1a7e25f15
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:603)
-	at pageclases.AddWidgetsOfServiceTemplates.copyAndDeleteCopiedWidget(AddWidgetsOfServiceTemplates.java:584)
-	at stepdefinations.AddWidgetsOfServiceTemplatesSteps.clone_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_it_gets_delete(AddWidgetsOfServiceTemplatesSteps.java:46)
-	at ✽.Clone dispayed &quot;Workplace Overview&quot; widget it gets clone and after delete that cloned widget it gets delete(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/featureFiles/AddWidgetsOfServiceTemplates.feature:18)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1974427434", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1974427434'><pre>org.openqa.selenium.JavascriptException: javascript error: {&quot;status&quot;:60,&quot;value&quot;:&quot;[object HTMLDivElement] has no size and location&quot;}
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageclases.AddWidgetsOfServiceTemplates.clickOnCheckBoxAndTemplateName(AddWidgetsOfServiceTemplates.java:246)
+	at stepdefinations.AddWidgetsOfServiceTemplatesSteps.click_on_check_box_and_template_whose_name_as(AddWidgetsOfServiceTemplatesSteps.java:23)
+	at ✽.Click on checkBox and template whose name as &quot;QADemo&quot;(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/featureFiles/AddServiceTemplateWidgets.feature:14)
+</pre></div><a href='#' onClick='toggleBox("stack-trace812448650", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace812448650'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;QADemo&apos;]/ancestor::div[@class=&apos;rt-tr -odd&apos; or  @class=&apos;rt-tr -even&apos;]//span[@class=&apos;checkmark&apos;]&quot;}
   (Session info: chrome=129.0.6668.59)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d83662343b617fe3cfe67ef1a7e25f15, actions {actions=[org.openqa.selenium.interactions.Sequence@1d0695da]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.59, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58854}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58854/devtoo..., se:cdpVersion: 129.0.6668.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d83662343b617fe3cfe67ef1a7e25f15
+Command: [17239bc48aac6f7b2c9b56b83eef67d1, findElement {using=xpath, value=//div[text()=&apos;QADemo&apos;]/ancestor::div[@class=&apos;rt-tr -odd&apos; or  @class=&apos;rt-tr -even&apos;]//span[@class=&apos;checkmark&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.59, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\LENOVO\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51159}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51159/devtoo..., se:cdpVersion: 129.0.6668.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 17239bc48aac6f7b2c9b56b83eef67d1
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -119,13 +123,15 @@ Session ID: d83662343b617fe3cfe67ef1a7e25f15
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:604)
-	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:603)
-	at pageclases.AddWidgetsOfServiceTemplates.copyAndDeleteCopiedWidget(AddWidgetsOfServiceTemplates.java:584)
-	at stepdefinations.AddWidgetsOfServiceTemplatesSteps.clone_dispayed_widget_it_gets_clone_and_after_delete_that_cloned_widget_it_gets_delete(AddWidgetsOfServiceTemplatesSteps.java:46)
-	at ✽.Clone dispayed &quot;Workplace Overview&quot; widget it gets clone and after delete that cloned widget it gets delete(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/featureFiles/AddWidgetsOfServiceTemplates.feature:18)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageclases.AddWidgetsOfServiceTemplates.clickOnCheckBoxAndTemplateName(AddWidgetsOfServiceTemplates.java:246)
+	at stepdefinations.AddWidgetsOfServiceTemplatesSteps.click_on_check_box_and_template_whose_name_as(AddWidgetsOfServiceTemplatesSteps.java:23)
+	at ✽.Click on checkBox and template whose name as &quot;QADemo&quot;(file:///C:/Users/LENOVO/git/repository2/Eco_PVT_LTD/src/test/resources/featureFiles/AddServiceTemplateWidgets.feature:14)
 </pre></div></td>
-<td>81</td>
+<td>11</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -137,54 +143,49 @@ Session ID: d83662343b617fe3cfe67ef1a7e25f15
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "create dashboard Module and Add RunHours widget"</td>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "Create Service templates and Add widget"</td>
 <td></td>
 <td>9</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 <tr>
 <td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create dashboard and add Add Table widget successfully", "create dashboard Module and Add Table widget"</td>
 <td></td>
-<td>89</td>
-<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
-<tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "Create Service templates and Add widget"</td>
-<td></td>
-<td>10</td>
-<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
-<tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Edit and Update the user profile", "Test the User Profile Modeule"</td>
-<td></td>
-<td>44</td>
-<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
-<tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create dashboard and add Add RunHours widget successfully", "create dashboard Module and Add RunHours widget"</td>
-<td></td>
-<td>54</td>
-<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
-<tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "create dashboard Module and Add Table widget"</td>
-<td></td>
-<td>11</td>
-<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
-<tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Activity created and viewed successfully", "Test Activity Module"</td>
-<td></td>
-<td>49</td>
+<td>123</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 <tr>
 <td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create dashboard and add Add ListView widget successfully", "create dashboard Module and Add ListView widget"</td>
 <td></td>
-<td>24</td>
+<td>26</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 <tr>
-<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful Login with Valid Credentials", "Login"</td>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Create dashboard and add Add RunHours widget successfully", "create dashboard Module and Add RunHours widget"</td>
 <td></td>
-<td>10</td>
+<td>58</td>
+<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
+<tr>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "create dashboard Module and Add RunHours widget"</td>
+<td></td>
+<td>9</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 <tr>
 <td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "create dashboard Module and Add ListView widget"</td>
 <td></td>
 <td>9</td>
+<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
+<tr>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Activity created and viewed successfully", "Test Activity Module"</td>
+<td></td>
+<td>47</td>
+<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
+<tr>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful Login with Valid Credentials", "Login"</td>
+<td></td>
+<td>9</td>
+<td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
+<tr>
+<td title='testrunner.SmartSenseRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.SmartSenseRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login to Eco app", "create dashboard Module and Add Table widget"</td>
+<td></td>
+<td>12</td>
 <td>testrunner.SmartSenseRunner@65e98b1c</td></tr>
 </table><p>
 </body>

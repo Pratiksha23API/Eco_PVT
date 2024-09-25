@@ -388,12 +388,17 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 		}
 		else if(widgetName.equalsIgnoreCase("Weather Forecast"))
 		{
-			Thread.sleep(1000);
+//			Thread.sleep(1000);
+			
 			acn= new Actions(ndriver);
 			acn.sendKeys(Keys.PAGE_UP).build().perform();
-			//						Thread.sleep(2000);
-			JavaScriptOperation.scrollToElement(addNewWidget);
 			acn.moveToElement(addNewWidget).click().build().perform();
+									Thread.sleep(2000);
+									
+									
+//			JavaScriptOperation.scrollToElement(addNewWidget);
+//			Thread.sleep(1000);
+//			acn.moveToElement(addNewWidget).click().build().perform();
 			applyExplicitWaitsUntilElementClickable(weatherForecastWidget,30).click();
 			applyExplicitWaitsUntilElementClickable(addButton,30).click();
 
@@ -565,19 +570,31 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 	public String copyAndDeleteCopiedWidget(String widgetName) throws Exception
 	{
 		acn=new Actions(ndriver);
-		acn.sendKeys(Keys.PAGE_UP).build().perform();
+		acn.sendKeys(Keys.DOWN).build().perform();
+		Thread.sleep(1000);
+//		
 
-		jse= (JavascriptExecutor)ndriver;
-		jse.executeScript("window.scrollBy(0,4000)");
+//		jse= (JavascriptExecutor)ndriver;
+//		jse.executeScript("window.scrollBy(0,4000)");
 
 		widget=widgetName;		
 		//generic copy and delete code
-		Thread.sleep(2000);
-		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
+//		Thread.sleep(2000);
+//		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
+		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("(//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown'])[1]"));
 		Thread.sleep(2000);
 		JavaScriptOperation.scrollToElement(addedwidgetIcon);
+		Thread.sleep(1000);
+		jse= (JavascriptExecutor)ndriver;
+		jse.executeScript("window.scrollBy(0,2000)");
+//		try {
+//			applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
+//		}
+//		catch(Exception e) {
+//			js.click(addedwidgetIcon);
+//		}
 		acn.moveToElement(addedwidgetIcon).click().build().perform();
-//		Thread.sleep(2000);
+		Thread.sleep(2000);
 
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		Thread.sleep(1000);

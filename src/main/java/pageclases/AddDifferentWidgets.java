@@ -275,7 +275,7 @@ public class AddDifferentWidgets extends BaseClass {
 		applyExplicitWaitsUntilElementClickable(enterNameFiled,30).click();
 		applyExplicitWaitsUntilElementClickable(enterNameFiled,30).sendKeys(dashBoardName);
 		applyExplicitWaitsUntilElementClickable(createBtn,30).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		String createdMessg= notification.getText();
 		Thread.sleep(1000);
@@ -468,8 +468,8 @@ public class AddDifferentWidgets extends BaseClass {
 			Thread.sleep(1000);
 			applyExplicitWaitsUntilElementClickable(aliseName,50).sendKeys("ali");
 			applyExplicitWaitsUntilElementClickable(locatn,50).click();
-			//			ndriver.findElement(By.xpath("//div[text()='test12']")).click();
-			ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
+						ndriver.findElement(By.xpath("//div[text()='test12']")).click();
+//			ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
 
 			applyExplicitWaitsUntilElementClickable(parameter,50).click();
 			ndriver.findElement(By.xpath("//div[text()='KVA']")).click();
@@ -725,7 +725,7 @@ public class AddDifferentWidgets extends BaseClass {
 		//		applyExplicitWaitsUntilElementClickable(refreshPreview,30).click();
 		Thread.sleep(3000);
 		applyExplicitWaitsUntilElementClickable(addWidget,30).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		notfn =notification.getText();
 		Thread.sleep(1000);
 		System.out.println(notfn);
@@ -835,10 +835,12 @@ public class AddDifferentWidgets extends BaseClass {
 		JavaScriptOperation.scrollToElement(tableLocatn);
 		applyExplicitWaitsUntilElementClickable(tableLocatn,30).click();
 		Thread.sleep(2000);
-		//		WebElement PCB6 = ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='PSB 6']"));
-		//		WebElement PCB6= ndriver.findElement(By.xpath("//div[ text()='PSB 6']"));
-		//		applyExplicitWaitsUntilElementClickable(PCB6,30).click();
-		ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
+//				WebElement PCB6 = ndriver.findElement(By.xpath("//div[@class='css-1xirafb-option selectionbox_prefix__option selectionbox_prefix__option--is-selected' and text()='PSB 6']"));
+				WebElement PCB6 = ndriver.findElement(By.xpath("//div[ text()='PSB 6']"));
+				applyExplicitWaitsUntilElementClickable(PCB6,30).click();
+
+		//		ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
+		
 		Thread.sleep(1000);
 
 		applyExplicitWaitsUntilElementClickable(tableParameter,30).click();

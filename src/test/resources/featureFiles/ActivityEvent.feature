@@ -3,7 +3,8 @@ Feature: Test Activity Module
   @Login
   Scenario: Validate Activity created and viewed successfully
     Given User launch the browser
-    When User opens URL "https://staging.ecolibrium.io/"
+    #When User opens URL "https://staging.ecolibrium.io/"
+    When User opens URL "https://smartsense.ecolibrium.io/"
     And User enters Username as "Mrinal.Patil"
     And User enters Password as "@Eco123456"
     And Click on the Login
@@ -12,14 +13,14 @@ Feature: Test Activity Module
     When User Click on Add New Activity button
     And User enter "ActivTe" in Activity Name text field
     And User select "Planned" value from Activity Type dropdown
-    And User select "Mrinal Sensor 21" value from Sensor Name dropdown
+    And User select "NS-6" value from Sensor Name dropdown
     And User select "Default Action" value from Standard Name dropdown
     And User select "All Assset" value from Item Name dropdown
     And User select "Default Action" value from Action Taken dropdown
     And User enter "Test Description" value in Description Text field
-    And User select "21" for Date of Activity Planned
+    And User select "25" for Date of Activity Planned
     And User enter "Test Result" value in Observation Result Text field
-    And User select "21" for Date of Activity Executed
+    And User select "25" for Date of Activity Executed
     And click on Create Activity button
     
     Then click on Activity Menu

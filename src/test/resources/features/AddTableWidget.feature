@@ -3,7 +3,8 @@ Feature: create dashboard Module and Add Table widget
 		@Login	
 		Scenario: Login to Eco app
 		Given User launch the browser
-		When  User opens URL "https://staging.ecolibrium.io/" 
+#		When  User opens URL "https://staging.ecolibrium.io/" 
+    When  User opens URL "https://smartsense.ecolibrium.io/" 
 		And   User enters Username as "qa12" 
 		And   User enters Password as "qa12" 
 		And   Click on the Login 

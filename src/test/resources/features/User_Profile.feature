@@ -3,7 +3,8 @@ Feature: Test the User Profile Modeule
 @Login
 Scenario: Edit and Update the user profile
 	Given User launch the browser
-	When User opens URL "https://staging.ecolibrium.io/" 
+#	When User opens URL "https://staging.ecolibrium.io/" 
+	When User opens URL "https://smartsense.ecolibrium.io/" 
 	And User enters Username as "Mrinal.Patil" 
 	And User enters Password as "@Eco123456" 
 	And Click on the Login 
