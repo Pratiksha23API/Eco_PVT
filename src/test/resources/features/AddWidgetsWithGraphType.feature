@@ -10,7 +10,7 @@ Feature: Add widgets with different graph-Types
 		Then  Page Title should be "SmartSense"
 		
 Scenario:  Create dashboard and add widget with different Graph-type
- Given User is on Smartsense page and add dashboard with name as "tqa12"
+ Given User is on Smartsense page and add dashboard with name as "grapType"
  When User Add widget with graph type as "Pie Chart" then Verify after refresh preview widget is dispayed compulsory as per type
  Then After click on add widget verify user will get the messg as "Widget Added"
  When User Add widget with graph type as "Radial Chart" then Verify after refresh preview widget is dispayed compulsory as per type

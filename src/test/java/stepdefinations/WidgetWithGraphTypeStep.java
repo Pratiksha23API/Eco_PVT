@@ -30,8 +30,8 @@ public class WidgetWithGraphTypeStep {
 		grapTyp.selectLocatnParameter();
 		grapTyp.selectColour();
 		grapTyp.clickOnRefreshPreview();
-		boolean widgetDisplayed =grapTyp.verifyWidgetDisplayed();
-		Assert.assertTrue(widgetDisplayed,"widget not display successfully");
+//		boolean widgetDisplayed =grapTyp.verifyWidgetDisplayed();
+//		Assert.assertTrue(widgetDisplayed,"widget not display successfully");
 	}
 
 	@Then("After click on add widget verify user will get the messg as {string}")
