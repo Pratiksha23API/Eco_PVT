@@ -7,12 +7,14 @@ import drivers.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageclases.AddDifferentWidgets;
 import pageclases.Dashboard;
 
 public class DashboardSteps {
 
 	public WebDriver driver = DriverFactory.getDriver();
 	public Dashboard dash = new Dashboard(DriverFactory.getDriver());
+	public AddDifferentWidgets widgets = new AddDifferentWidgets(DriverFactory.getDriver());
 
 
 	@Given("User is on Smartsense page and add dashboard as {string}")
@@ -20,6 +22,9 @@ public class DashboardSteps {
 
 		boolean created =dash.createDashboard(dashboardName);
 		Assert.assertTrue(created, "dashboard is not created ");
+		
+//		String created =widgets.createNewDashboard(dashboardName);
+//		Assert.assertEquals(created, "Dashboard created");
 
 	}
 	@When("User Add widget as {string} then Verify after refresh preview widget is dispayed compulsory")

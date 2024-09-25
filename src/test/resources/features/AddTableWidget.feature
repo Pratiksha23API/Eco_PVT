@@ -12,7 +12,7 @@ Feature: create dashboard Module and Add Table widget
  
  
  Scenario: Create dashboard and add Add Table widget successfully
- Given User is on Smartsense page and add dashboard as a "QA21"
+ Given User is on Smartsense page and add dashboard as a "teat"
  When User Add widget as "Table" and add below parameters
  |L2 Current 1|
  And  add below sensors then Verify after refresh preview widget is should be dispayed compulsory

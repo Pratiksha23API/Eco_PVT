@@ -12,7 +12,7 @@ Feature: create dashboard Module and Add RunHours widget
  
  
  Scenario: Create dashboard and add Add RunHours widget successfully
- Given User is on Smartsense page and add dashboard as a "QA21"
+ Given User is on Smartsense page and add dashboard as a "QA213"
  When User Add widget as "RunHours" then Verify after refresh preview widget is should be dispayed compulsory
  When Clone that dispayed "RunHours" widget it gets clone and after delete that cloned widget gets delete
  Then Affter that delete created dashboard and user will get messg as "Dashboard Deleted"

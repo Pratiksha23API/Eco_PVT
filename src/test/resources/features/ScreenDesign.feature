@@ -1,13 +1,21 @@
 Feature: ScreenDesign Module
 
-Background: This steps will be common for all the following scenarios
-Given User launch the browser
-When  User opens URL "https://staging.ecolibrium.io/" 
-And   User enters Username as "qa12" 
-And   User enters Password as "qa12" 
-And   Click on the Login 
-Then  Page Title should be "SmartSense"
+#Background:: This steps will be common for all the following scenarios
+#Given User launch the browser
+#When  User opens URL "https://staging.ecolibrium.io/" 
+#And   User enters Username as "qa12" 
+#And   User enters Password as "qa12" 
+#And   Click on the Login 
+#Then  Page Title should be "SmartSense"
 
+@Login
+Scenario: Successful Login with Valid Credentials 
+	Given User launch the browser
+	When User opens URL "https://staging.ecolibrium.io/" 
+	And User enters Username as "qa12" 
+	And User enters Password as "qa12" 
+	And Click on the Login 
+	Then Page Title should be "SmartSense" 
 
 Scenario: Sucessfully Adition of sustainablity template
 When  User click on the Screen Design module

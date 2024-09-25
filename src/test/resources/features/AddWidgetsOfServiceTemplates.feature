@@ -10,8 +10,8 @@ Feature: Create Service templates and Add widget
 		Then  Page Title should be "SmartSense"
 
 	Scenario: Create Service templates and Add,Clone & Delete different cloned widgets successfully
-   Given User is on Smartsense page and Add service templates as "QADEMO"
-   And Click on checkBox and template whose name as "QADEMO"
+   Given User is on Smartsense page and Add service templates as "DemoQA"
+   And Click on checkBox and template whose name as "DemoQA"
    When User click on options user will able to add widget as "Workplace Graph" and verify widget added successfully
    When User edit the dashboard user will clone and delete cloned widget successfully
    When User add new widget as "Workplace Overview" then verify widget added successfully

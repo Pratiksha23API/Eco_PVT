@@ -12,7 +12,7 @@ Feature: create dashboard Module and Add MapView widget
  
  
  Scenario: Create dashboard and add Add MapView widget successfully
- Given User is on Smartsense page and add dashboard as a "QA21"
+ Given User is on Smartsense page and add dashboard as a "tq12"
  When User Add widget as "Map View" then Verify after refresh preview widget is should be dispayed compulsory
  When Clone that dispayed "Map View" widget it gets clone and after delete that cloned widget gets delete
  Then Affter that delete created dashboard and user will get messg as "Dashboard Deleted"

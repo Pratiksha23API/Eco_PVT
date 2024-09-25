@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 				
 				
 		
-		features = {"src\\test\\resources\\features\\User_Profile.feature"},
+		features = {"src\\test\\resources\\featureFiles"},
 		glue= {"stepdefinations"},
 		dryRun= false,
 		monochrome=true,

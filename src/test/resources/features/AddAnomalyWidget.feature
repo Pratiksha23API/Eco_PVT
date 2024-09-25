@@ -12,7 +12,7 @@ Feature: create dashboard Module and Add Anomaly Detection widget
  
  
  Scenario: Create dashboard and add Add Anomaly Detection widget successfully
- Given User is on Smartsense page and add dashboard as a "QA21"
+ Given User is on Smartsense page and add dashboard as a "tq13"
  When User Add widget as "Anomaly Detection" then Verify after refresh preview widget is should be dispayed compulsory
  When Clone that dispayed "Anomaly Detection" widget it gets clone and after delete that cloned widget gets delete
  When User edit dispayed anomaly widget it gets edited and able to save changes in "Anomaly Detection" widget

@@ -80,7 +80,7 @@ public class Dashboard extends BaseClass {
 	@FindBy(xpath="//textarea[@name='widget_description']")
 	private WebElement widgetDescription ;
 
-	@FindBy(xpath="//input[@name='from']")
+	@FindBy(xpath="//input[@placeholder='From']")
 	private WebElement fromField ;
 
 	@FindBy(xpath="//input[@class='form-control-sm form-control']")
@@ -238,7 +238,13 @@ public class Dashboard extends BaseClass {
 		if(widgetName.equalsIgnoreCase("Pie Chart"))
 		{
 			applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
-			applyExplicitWaitsUntilElementClickable(ellipsisVerticalIcon,30).click();
+			try {
+				applyExplicitWaitsUntilElementClickable(ellipsisVerticalIcon,30).click();
+			}
+			catch(Exception e) {
+				js.click(ellipsisVerticalIcon);
+			}
+//			applyExplicitWaitsUntilElementClickable(ellipsisVerticalIcon,30).click();
 			applyExplicitWaitsUntilElementClickable(plusIcon,50).click();
 			Thread.sleep(1000);
 
@@ -297,7 +303,13 @@ public class Dashboard extends BaseClass {
 		{
 			applyExplicitWaitsUntilElementClickable(operationalExcellence,50).click();
 			//			Thread.sleep(1000);
-			applyExplicitWaitsUntilElementClickable(VerticalIcon,50).click();       
+			try {
+				applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+			}
+			catch(Exception e) {
+				js.click(VerticalIcon);
+			}
+//			applyExplicitWaitsUntilElementClickable(VerticalIcon,50).click();       
 			//			Thread.sleep(1000);
 			applyExplicitWaitsUntilElementClickable(addWidgetMenu,30).click();                                //add by using widgets menu
 			applyExplicitWaitsUntilElementClickable(sensorHealth,30).click();
@@ -341,7 +353,8 @@ public class Dashboard extends BaseClass {
 			//select qa12	
 			applyExplicitWaitsUntilElementClickable(selectBox1,30).click(); 
 			Thread.sleep(2000);
-			ndriver.findElement(By.xpath("//div[text()='QA12']")).click();
+//			ndriver.findElement(By.xpath("//div[text()='QA12']")).click();
+			ndriver.findElement(By.xpath("//div[text()='Manual Sensor101']")).click();
 			Thread.sleep(1000);
 
 			// //select kVA	
@@ -353,8 +366,9 @@ public class Dashboard extends BaseClass {
 				js.click(selectBox2);
 			}
 			//			Thread.sleep(2000);
-			ndriver.findElement(By.xpath("(//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div)[3]")).click();  
-
+//			ndriver.findElement(By.xpath("(//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div)[3]")).click(); 
+			
+			ndriver.findElement(By.xpath("//div[text()='kWh']")).click(); 
 
 			applyExplicitWaitsUntilElementClickable(toggleCheckBox,30).click();                       //togglebtn click
 			acn.moveToElement(refreshPreview).perform();
@@ -433,7 +447,15 @@ public class Dashboard extends BaseClass {
 			js.click(download);
 		}
 //		applyExplicitWaitsUntilElementClickable(download,30).click();                               //download
-		ndriver.findElement(By.xpath("//span[normalize-space()='Image']")).click();                 //image
+		
+		try {
+			ndriver.findElement(By.xpath("//span[normalize-space()='Image']")).click();                 //image
+			Thread.sleep(1000);
+		}
+		catch(Exception e) {
+			js.click(ndriver.findElement(By.xpath("//span[normalize-space()='Image']")));
+		}
+//		ndriver.findElement(By.xpath("//span[normalize-space()='Image']")).click();                 //image
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(okBtn,30).click();                                 //ok  btn
 		Thread.sleep(2000);
@@ -454,8 +476,16 @@ public class Dashboard extends BaseClass {
 		}
 
 //		applyExplicitWaitsUntilElementClickable(download,30).click();                               //download
-		ndriver.findElement(By.xpath("//span[normalize-space()='pdf']")).click();                       //pdf
-		Thread.sleep(1000);
+		
+		try {
+			ndriver.findElement(By.xpath("//span[normalize-space()='pdf']")).click();                       //pdf
+			Thread.sleep(1000);
+		}
+		catch(Exception e) {
+			js.click(ndriver.findElement(By.xpath("//span[normalize-space()='pdf']")));
+		}
+//		ndriver.findElement(By.xpath("//span[normalize-space()='pdf']")).click();                       //pdf
+//		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(okBtn,30).click();                                   //ok  btn
 		Thread.sleep(2000);
 	}
@@ -465,7 +495,7 @@ public class Dashboard extends BaseClass {
 		String path =basePath+"\\downloadfiles";	
 		// C:\Users\Admin\git\Eco\Eco_PVT\download
 		System.out.println(path);
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		boolean a = isFileDownloaded(path,dataFileNameWithExtension);
 		if(!a) {
 			System.err.println("File not downloaded");
@@ -485,8 +515,21 @@ public class Dashboard extends BaseClass {
 
 	public void settingOfDashboard() throws Exception
 	{
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
-		applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+//		Thread.sleep(10000);
+		try {
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		}
+		catch(Exception e) {
+			js.click(operationalExcellence);
+		}
+//		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		try {
+			applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+		}
+		catch(Exception e) {
+			js.click(VerticalIcon);
+		}
+//		applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
 		Thread.sleep(1000);
 		try {
 			applyExplicitWaitsUntilElementClickable(setting,30).click();
@@ -502,8 +545,23 @@ public class Dashboard extends BaseClass {
 
 	public String deleteTheDashboard() throws Exception
 	{
-		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
-		applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+//		JavaScriptOperation.scrollToElement(operationalExcellence);
+//		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		
+		try {
+			applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+		}
+		catch(Exception e) {
+			js.click(operationalExcellence);
+		}
+		Thread.sleep(1000);
+		try {
+			applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
+		}
+		catch(Exception e) {
+			js.click(VerticalIcon);
+		}
+//		applyExplicitWaitsUntilElementClickable(VerticalIcon,30).click();
 		Thread.sleep(1000);
 		try {
 			applyExplicitWaitsUntilElementClickable(deleteMenu,30).click();

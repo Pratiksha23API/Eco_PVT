@@ -1,5 +1,7 @@
 package stepdefinations;
 
+
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -10,7 +12,7 @@ import io.cucumber.java.en.When;
 import pageclases.SmartSenseLoginPage;
 
 public class SmartSenseLoginSteps{
-	WebDriver driver;
+	public WebDriver driver;
 	SmartSenseLoginPage Smart= new SmartSenseLoginPage(DriverFactory.getDriver());
 
 	@Given("User launch the browser")
@@ -20,14 +22,16 @@ public class SmartSenseLoginSteps{
 	}
 
 	@When("User opens URL {string}")
-	public void user_opens_url(String Url) {
+	public void user_opens_url(String Url) throws Exception {
+
 		driver = DriverFactory.getDriver();
+	
 		driver.get(Url);
 	}
 	
 
 	@When("User enters Username as {string}")
-	public void user_enters_username_as(String UserName) {
+	public void user_enters_username_as(String UserName) throws Exception {
 
 		Smart=new SmartSenseLoginPage(DriverFactory.getDriver());
 		Smart.Enterusername(UserName);

@@ -81,26 +81,26 @@ public class UserProfileSteps {
 		List actualOptions = uP.verifyNumberFormatDropdown(dropdown);
 		Assert.assertEquals(expectedOptions, actualOptions);
 	}
-	
-//missing step	//
+
+	//missing step	//
 	//
 	@Then("User click on numberformat and selects {string} value from dropdown")
 	public void user_click_on_numberformat_and_selects_value_from_dropdown(String numFormatValue) throws Exception {
-       uP.selectValueFromNumberFormatDrpDown(numFormatValue);
+		uP.selectValueFromNumberFormatDrpDown(numFormatValue);
 	}
 
 	@Then("User click on delivery mode and selects {string} velue from dropdown")
 	public void user_click_on_delivery_mode_and_selects_velue_from_dropdown(String deliveryModeValue) throws Exception {
-	uP.selectValueFromDeliveryModeDrpDown(deliveryModeValue);
-	
+		uP.selectValueFromDeliveryModeDrpDown(deliveryModeValue);
+
 	}
 
 	@Then("User click on dashboard layout and selects {string} velue from dropdown")
 	public void user_click_on_dashboard_layout_and_selects_velue_from_dropdown(String DashValue) {
-	uP.selectValueFromDashBoardLayoutDrpDown(DashValue);
+		uP.selectValueFromDashBoardLayoutDrpDown(DashValue);
 	}
 
-	
+
 	//
 
 	@Then("User clicks on Delivery Mode dropdown")
@@ -140,7 +140,7 @@ public class UserProfileSteps {
 		uP.userCliksOnDashboardLayoutDropdown();
 		uP.userSelectsVelueFromDropdown(details.get(5));
 	}
-	
+
 	@When("User try  to edit name as {string} without space Then verify user should get notification as {string}")
 	public void user_try_to_edit_name_as_without_space_then_verify_user_should_get_notification_as(String name, String notification) throws Exception {
 		uP.UserEntersUserName(name);
@@ -148,13 +148,13 @@ public class UserProfileSteps {
 		String messg =uP.getNotification();
 		Assert.assertEquals(messg, notification);
 	}
-	
+
 	@When("user enter name as per requirement i.e with one space as {string} it update successfully")
 	public void user_enter_name_as_per_requirement_i_e_with_one_space_as_it_update_successfully(String name) throws Exception {
 		uP.UserEntersUserName(name);
 		uP.userClicksOnUpdateProfileDetailsButton();
 	}
-	
+
 	@When("user try to edit contatNumber with less than {int} digit as {string} Then verify user should get notification as {string}")
 	public void user_try_to_edit_contat_number_with_less_than_digit_as_then_verify_user_should_get_notification_as(Integer digit, String number, String notification) throws Exception {
 		uP.UserEntersUserContactNumber(number);	
@@ -162,7 +162,7 @@ public class UserProfileSteps {
 		String messg =uP.getNotification();
 		Assert.assertEquals(messg, notification);	
 	}
-	
+
 	@When("user enter contactNumber as per requirement i.e with ten digit  as {string} it update successfully")
 	public void user_enter_contact_number_as_per_requirement_i_e_with_ten_digit_as_it_update_successfully(String contactNum) throws Exception {
 		uP.UserEntersUserContactNumber(contactNum);	

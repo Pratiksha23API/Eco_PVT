@@ -495,10 +495,11 @@ public class AddDifferentWidgets extends BaseClass {
 
 			applyExplicitWaitsUntilElementClickable(selectBox1,30).click();
 			Thread.sleep(2000);
-			WebElement pcb=ndriver.findElement(By.xpath("//div[@class='css-fk865s-option selectionbox_prefix__option' and text()='PSB 6']"));
+//			WebElement pcb=ndriver.findElement(By.xpath("//div[@class='css-fk865s-option selectionbox_prefix__option' and text()='PSB 6']"));
 			//		acn=new Actions(ndriver);
-			JavaScriptOperation.scrollToElement(pcb);
-			applyExplicitWaitsUntilElementClickable(pcb,60).click(); 
+//			JavaScriptOperation.scrollToElement(pcb);
+//			applyExplicitWaitsUntilElementClickable(pcb,60).click(); 
+			ndriver.findElement(By.xpath("//div[text()='Manual Sensor101']")).click();
 			Thread.sleep(1000);
 
 			//	 select kwh	

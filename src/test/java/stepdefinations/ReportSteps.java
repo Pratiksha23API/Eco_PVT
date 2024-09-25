@@ -38,6 +38,7 @@ public class ReportSteps extends BaseClass{
 	    @Given("Add below sensors")
 	    public void add_below_sensors(io.cucumber.datatable.DataTable dataTable) throws Exception {
 	    
+	    	Thread.sleep(2000);
 	    ac.selectSensors(dataTable);
 	    	
 	    }

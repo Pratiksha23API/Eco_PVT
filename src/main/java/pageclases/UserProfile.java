@@ -77,7 +77,7 @@ public class UserProfile {
 
 	@FindBy(xpath = "//span[@class='mainMsg']")
 	private WebElement mainMessg;
-	
+
 	public void clickOnMyProfileButton() {
 		wait.until(ExpectedConditions.visibilityOf(myProfile));
 		myProfile.click();
@@ -100,7 +100,7 @@ public class UserProfile {
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(contactNumber)).getText());
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(numberFormat)).getText());
 		userDetails.add(wait.until(ExpectedConditions.visibilityOf(deliveryMode)).getText());
-//		userDetails.add(wait.until(ExpectedConditions.visibilityOf(dashboardLayout)).getText());
+		//		userDetails.add(wait.until(ExpectedConditions.visibilityOf(dashboardLayout)).getText());
 		return userDetails;
 
 	}
@@ -128,8 +128,8 @@ public class UserProfile {
 	public List verifyNumberFormatDropdown(String dropdown) {
 		String xpath = "//label[contains(text(), 'dropdown')]//following::div[contains(@class,'selectionbox_prefix__option')]"
 				.replace("dropdown", dropdown);
-		
-	
+
+
 
 		List<String> actual = new ArrayList<String>();
 		wait.until(ExpectedConditions.visibilityOf(ndriver.findElement(By.xpath(xpath))));
@@ -140,28 +140,28 @@ public class UserProfile {
 
 		return actual;
 	}
-	
+
 	public void selectValueFromNumberFormatDrpDown(String drpdownValue) throws Exception
 	{
-	wait.until(ExpectedConditions.visibilityOf(numberFormatDropdownButton)).click();
-//	Thread.sleep(2000);
-	WebElement usUk =ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']"));
-	Actions acn = new Actions(ndriver);
-	acn.moveToElement(usUk).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(numberFormatDropdownButton)).click();
+		//	Thread.sleep(2000);
+		WebElement usUk =ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']"));
+		Actions acn = new Actions(ndriver);
+		acn.moveToElement(usUk).click().build().perform();
 	}
-	
-	
+
+
 	public void selectValueFromDeliveryModeDrpDown(String drpdownValue) throws Exception
 	{
-	wait.until(ExpectedConditions.visibilityOf(deliveryModeDropdownButton)).click();
-	Thread.sleep(2000);
-	ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']")).click();
+		wait.until(ExpectedConditions.visibilityOf(deliveryModeDropdownButton)).click();
+		Thread.sleep(2000);
+		ndriver.findElement(By.xpath("//div[@class='css-11unzgr selectionbox_prefix__menu-list']/div[text()='"+drpdownValue+"']")).click();
 	}
-	
+
 	public void selectValueFromDashBoardLayoutDrpDown(String drpdownValue)
 	{
-	wait.until(ExpectedConditions.visibilityOf(dashboardLayoutDropdownButton)).click();
-	ndriver.findElement(By.xpath("//div[text()='"+drpdownValue+"']")).click();
+		wait.until(ExpectedConditions.visibilityOf(dashboardLayoutDropdownButton)).click();
+		ndriver.findElement(By.xpath("//div[text()='"+drpdownValue+"']")).click();
 	}
 
 	public void userCliksOnDeliveryModeDropdown() {
@@ -183,13 +183,13 @@ public class UserProfile {
 		wait.until(ExpectedConditions.elementToBeClickable(saveEditProfileButton)).click();
 		Thread.sleep(2000);
 	}
-String notfn;	
+	String notfn;	
 	public String getNotification() throws Exception
 	{
-		 notfn  = mainMessg.getText();
-   Thread.sleep(1000);
-   System.out.println("user got notification -> "+notfn);
-   return notfn;
-     
+		notfn  = mainMessg.getText();
+		Thread.sleep(1000);
+		System.out.println("user got notification -> "+notfn);
+		return notfn;
+
 	}
 }

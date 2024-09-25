@@ -12,6 +12,6 @@ Feature: create dashboard Module and Add ListView widget
  
  
  Scenario: Create dashboard and add Add ListView widget successfully
- Given User is on Smartsense page and add dashboard as a "QA21"
+ Given User is on Smartsense page and add dashboard as a "tqq12"
  When User Add widget as "List View" then Verify after refresh preview widget is should be dispayed compulsory
  Then Affter that delete created dashboard and user will get messg as "Dashboard Deleted"

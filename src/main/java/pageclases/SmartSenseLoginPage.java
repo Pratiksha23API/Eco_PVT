@@ -36,8 +36,9 @@ public class SmartSenseLoginPage {
 		js=new JavaScriptOperation(ndriver);
 	}
 
-	public void Enterusername(String username) 
+	public void Enterusername(String username) throws Exception 
 	{
+		Thread.sleep(2000);
 		Username.sendKeys(username);
 	}
 
