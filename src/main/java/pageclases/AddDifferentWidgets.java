@@ -525,11 +525,12 @@ public class AddDifferentWidgets extends BaseClass {
 			acn.sendKeys(Keys.PAGE_DOWN).build().perform();
 			applyExplicitWaitsUntilElementClickable(selectBox1,30).click();
 			Thread.sleep(2000);
-			//			WebElement pcb=ndriver.findElement(By.xpath("//div[@class='css-fk865s-option selectionbox_prefix__option' and text()='PSB 6']"));
-			//		acn=new Actions(ndriver);
-			//			JavaScriptOperation.scrollToElement(pcb);
-			//			applyExplicitWaitsUntilElementClickable(pcb,60).click(); 
-			ndriver.findElement(By.xpath("//div[text()='Manual Sensor101']")).click();
+						WebElement pcb=ndriver.findElement(By.xpath("//div[@class='css-fk865s-option selectionbox_prefix__option' and text()='PSB 6']"));
+					acn=new Actions(ndriver);
+						JavaScriptOperation.scrollToElement(pcb);
+						applyExplicitWaitsUntilElementClickable(pcb,60).click();
+			
+//			ndriver.findElement(By.xpath("//div[text()='Manual Sensor101']")).click();
 			Thread.sleep(1000);
 
 			//	 select kwh	
@@ -600,9 +601,9 @@ public class AddDifferentWidgets extends BaseClass {
 		//		Thread.sleep(3000);
 		WebElement copiedWidgetVIcon= ndriver.findElement(By.xpath("//div[normalize-space() ='"+widget+" - Copy']//following ::div//div[@class='_Dropdown dropdown']"));
 		JavaScriptOperation.scrollToElement(copiedWidgetVIcon);
-		Thread.sleep(1000);
-		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
-		//		acn.moveToElement(copiedWidgetVIcon).click().build().perform();
+		Thread.sleep(2000);
+//		applyExplicitWaitsUntilElementClickable(copiedWidgetVIcon,30).click();
+				acn.moveToElement(copiedWidgetVIcon).click().build().perform();
 
 		Thread.sleep(1000);
 
@@ -741,7 +742,7 @@ public class AddDifferentWidgets extends BaseClass {
 		//copy and delete code
 		acn=new Actions(ndriver);
 		acn.sendKeys(Keys.PAGE_DOWN).build().perform();
-		//		Thread.sleep(3000);
+				Thread.sleep(2000);
 
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
 

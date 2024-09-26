@@ -392,6 +392,7 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 			
 			acn= new Actions(ndriver);
 			acn.sendKeys(Keys.PAGE_UP).build().perform();
+			
 			acn.moveToElement(addNewWidget).click().build().perform();
 									Thread.sleep(2000);
 									
@@ -569,32 +570,41 @@ public class AddWidgetsOfServiceTemplates extends BaseClass {
 
 	public String copyAndDeleteCopiedWidget(String widgetName) throws Exception
 	{
+		widget=widgetName;
+		Thread.sleep(2000);
 		acn=new Actions(ndriver);
-		acn.sendKeys(Keys.DOWN).build().perform();
-		Thread.sleep(1000);
-//		
-
+	
 //		jse= (JavascriptExecutor)ndriver;
-//		jse.executeScript("window.scrollBy(0,4000)");
-
-		widget=widgetName;		
-		//generic copy and delete code
+//		jse.executeScript("window.scrollBy(0,2000)");
 //		Thread.sleep(2000);
+		
+		//generic copy and delete code
+
 //		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']"));
 		WebElement addedwidgetIcon=ndriver.findElement(By.xpath("(//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown'])[1]"));
 		Thread.sleep(2000);
-		JavaScriptOperation.scrollToElement(addedwidgetIcon);
-		Thread.sleep(1000);
-		jse= (JavascriptExecutor)ndriver;
-		jse.executeScript("window.scrollBy(0,2000)");
+//		
+//		JavaScriptOperation.scrollToElement(addedwidgetIcon);
+//		Thread.sleep(1000);
+		acn.sendKeys(Keys.DOWN).scrollToElement(addedwidgetIcon).build().perform();
+		
+		Thread.sleep(2000);
+		acn.moveToElement(addedwidgetIcon).click().build().perform();
+		Thread.sleep(2000);
+		
+//		applyExplicitWaitsUntilElementClickable(addedwidgetIcon, 30).click();
+//		Thread.sleep(2000);
+		
+//		JavaScriptOperation.scrollToElement(addedwidgetIcon);
+//		Thread.sleep(1000);
 //		try {
 //			applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
 //		}
 //		catch(Exception e) {
 //			js.click(addedwidgetIcon);
 //		}
-		acn.moveToElement(addedwidgetIcon).click().build().perform();
-		Thread.sleep(2000);
+//		acn.moveToElement(addedwidgetIcon).click().build().perform();
+//		Thread.sleep(2000);
 
 		WebElement Oriactn = ndriver.findElement(By.xpath("//div[normalize-space() = '"+widget+"']//following ::div//div[@class='_Dropdown dropdown']//following::div//div/a/div/div[text()='Action']"));
 		Thread.sleep(1000);

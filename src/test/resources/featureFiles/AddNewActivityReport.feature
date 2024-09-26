@@ -1,10 +1,8 @@
-
 Feature: config report Module
 
 		@Login	
 		Scenario: Login to Eco app
 		Given User launch the browser
-#		When  User opens URL "https://staging.ecolibrium.io/"
     When User opens URL "https://smartsense.ecolibrium.io/"  
 		And   User enters Username as "qa12" 
 		And   User enters Password as "qa12" 
@@ -14,21 +12,21 @@ Feature: config report Module
   Scenario: Verify user able to add new report 
     Given Add new Report
     And  Add report name as "ActivityReport1" and select report type as "Config Report"
-   And  Add below sensors
-   |Accenture Test 1|  Accenture Test 2|QA12|
-   And Add below parameters
-   |Real Power Positive|Flow Totalizer| kW|
-   And Select the Graintime by "option-1" which have time "30 min"
-   And Select the startTime by "option-0" which have time "00.00"
+    And  Add below sensors
+    |Accenture Test 1|  Accenture Test 2|QA12|
+    And Add below parameters
+    |Real Power Positive|Flow Totalizer| kW|
+    And Select the Graintime by "option-1" which have time "30 min"
+    And Select the startTime by "option-0" which have time "00.00"
     And Select the endTime by "option-1" which have time "00.30"
-     And Select the triggerTime by "option-1" which have time "01 to 02"
-     And Add the emails as below
-     |HArshul G|Bhagawat Balaji Dongre Dongre|
-     And Select Delivery Frequency by "option-1" which has "Daily" frequency
-     And Start Day by "option-0" which is "Yesterday"
-     Then Click on Save config button and verify user is navigated to ReportListPage
-     When Search the create Report by name as "ActivityReport1" 
-     Then Verify the user createdReportName is display in the list as "ActivityReport1"
+    And Select the triggerTime by "option-1" which have time "01 to 02"
+    And Add the emails as below
+    |HArshul G|Bhagawat Balaji Dongre Dongre|
+    And Select Delivery Frequency by "option-1" which has "Daily" frequency
+    And Start Day by "option-0" which is "Yesterday"
+    Then Click on Save config button and verify user is navigated to ReportListPage
+    When Search the create Report by name as "ActivityReport1" 
+    Then Verify the user createdReportName is display in the list as "ActivityReport1"
    
 
    #@Delete

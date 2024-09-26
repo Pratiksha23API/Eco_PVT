@@ -168,9 +168,9 @@ public class WidgetWithGraphType extends BaseClass {
 		//		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(location,30).click();
 		Thread.sleep(1000);
-//		ndriver.findElement(By.xpath("(//div[text()='1000 KVA LT'])[1]")).click();    //here program stop
+		ndriver.findElement(By.xpath("(//div[text()='1000 KVA LT'])[1]")).click();    //here program stop
 		
-		ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
+//		ndriver.findElement(By.xpath("//div[text()='Mannual Sensor101']")).click();
 		
 		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(parameter,30).click();
