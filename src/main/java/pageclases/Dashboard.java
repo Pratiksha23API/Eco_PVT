@@ -527,13 +527,13 @@ public class Dashboard extends BaseClass {
 	public void settingOfDashboard() throws Exception
 	{
 //		Thread.sleep(1000);
-		JavaScriptOperation.scrollToElement(operationalExcellence);
-		try {
-			applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
-		}
-		catch(Exception e) {
-			js.click(operationalExcellence);
-		}
+//		JavaScriptOperation.scrollToElement(operationalExcellence);
+//		try {
+//			applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
+//		}
+//		catch(Exception e) {
+//			js.click(operationalExcellence);
+//		}
 		
 //		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
 //		 acn = new Actions(ndriver);
@@ -561,7 +561,9 @@ public class Dashboard extends BaseClass {
 
 	public String deleteTheDashboard() throws Exception
 	{
-		JavaScriptOperation.scrollToElement(operationalExcellence);
+		acn = new Actions(ndriver);
+		acn.moveToElement(operationalExcellence).build().perform();
+		Thread.sleep(1000);
 		applyExplicitWaitsUntilElementClickable(operationalExcellence,30).click();
 		
 //		try {

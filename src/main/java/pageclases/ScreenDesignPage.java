@@ -14,7 +14,7 @@ public class ScreenDesignPage {
 	WebDriver ndriver;
 	WebDriverWait wait;
 
-	@FindBy(xpath= "//img[@src='/app/assets/images/screen-design.svg']")
+	@FindBy(xpath= "//div[@data-title='Design']")
 	private WebElement ScreenDesignButton;
 
 	@FindBy(xpath= "//*[@class='border']")
@@ -93,6 +93,12 @@ public class ScreenDesignPage {
 		
 		@FindBy(xpath= "")
 		private WebElement ServiceBasedDashboardButtone;
+		
+		@FindBy(xpath= "//div[text()='Are you sure you want to delete Service?']")
+		private WebElement popUpText;
+		
+		@FindBy(xpath= "//button[text()='Ok']")
+		private WebElement okButton;
 
 	public ScreenDesignPage(WebDriver odriver)
 	{
@@ -317,6 +323,22 @@ public class ScreenDesignPage {
 		Thread.sleep(3000);
 		ServiceDeleteButton.click();	
 	}
+	
+	public boolean verifypopUpText() throws Exception
+	{
+		Thread.sleep(2000);
+		boolean textVisible =popUpText.isDisplayed();
+		return textVisible;
+	}
+	
+	public void clickOnOkBtn() throws Exception
+	{
+//		ndriver.switchTo().alert();
+		Thread.sleep(2000);
+		okButton.click();
+	}
+	
+	
 	
 	
 }

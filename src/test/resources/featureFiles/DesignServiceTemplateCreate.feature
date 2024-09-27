@@ -1,17 +1,10 @@
 Feature: ScreenDesign Module
 
-#Background:: This steps will be common for all the following scenarios
-#Given User launch the browser
-#When  User opens URL "https://staging.ecolibrium.io/" 
-#And   User enters Username as "qa12" 
-#And   User enters Password as "qa12" 
-#And   Click on the Login 
-#Then  Page Title should be "SmartSense"
 
 @Login
 Scenario: Successful Login with Valid Credentials 
 	Given User launch the browser
-	When User opens URL "https://staging.ecolibrium.io/" 
+	When  User opens URL "https://smartsense.ecolibrium.io/" 
 	And User enters Username as "qa12" 
 	And User enters Password as "qa12" 
 	And Click on the Login 
@@ -54,5 +47,6 @@ And   User Select the Automation Updated template checkbox And click on the dele
 Then  Are you sure you want to delete Service popup should be visible
 When  User click on the Ok button
 Then  Service deleted popup should be visible
+
 
 

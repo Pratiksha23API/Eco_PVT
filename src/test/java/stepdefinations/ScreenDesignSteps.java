@@ -130,17 +130,19 @@ public void user_select_the_automation_updated_template_checkbox_and_click_on_th
     Screen.SelectTheUpdatedServiceTemplateCheckboxAndClickOnTheDeleteTemplateButton();
 }
 @Then("Are you sure you want to delete Service popup should be visible")
-public void are_you_sure_you_want_to_delete_service_popup_should_be_visible() {
-    
+public void are_you_sure_you_want_to_delete_service_popup_should_be_visible() throws Exception {
+    boolean isVisible =Screen.verifypopUpText();
+    Assert.assertTrue(isVisible);
 }
 @When("User click on the Ok button")
-public void user_click_on_the_ok_button() {
-    
+public void user_click_on_the_ok_button() throws Exception {
+    Screen.clickOnOkBtn();
 }
 @Then("Service deleted popup should be visible")
 public void service_deleted_popup_should_be_visible() {
     
 }
+
 
 
 }

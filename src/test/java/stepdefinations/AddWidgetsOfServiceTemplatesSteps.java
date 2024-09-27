@@ -53,8 +53,8 @@ public class AddWidgetsOfServiceTemplatesSteps {
 		String deleteNotification =temp.copyAndDeleteCopiedParameterTrackingWidget();
 		Assert.assertEquals(deleteNotification, "Widget Deleted");
 	}
-
-
+	
+	
 
 
 
