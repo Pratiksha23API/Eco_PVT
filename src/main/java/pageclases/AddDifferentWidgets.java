@@ -571,7 +571,7 @@ public class AddDifferentWidgets extends BaseClass {
 		Thread.sleep(1000);
 
 		//		acn.moveToElement(addedwidgetIcon).click().build().perform();
-		//JavaScriptOperation.scrollToElement(addedwidgetIcon);
+//		JavaScriptOperation.scrollToElement(addedwidgetIcon);
 		acn.moveToElement(addedwidgetIcon);
 		Thread.sleep(2000);
 		applyExplicitWaitsUntilElementClickable(addedwidgetIcon,30).click();
